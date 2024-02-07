@@ -70,6 +70,22 @@ public class UtilisateurService implements IService<Utilisateur> {
         };
         return utilisateur;
     }
+
+    public Utilisateur recuperer(String login, String password) throws SQLException {
+        Utilisateur utilisateur = null;
+        try{
+            request = "SELECT * FROM utilisateur WHERE Login ='"+login+"' AND Password ='"+password+"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                utilisateur=new Utilisateur(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return utilisateur;
+    }
+
     public List<Utilisateur> getListUtilisateur() throws SQLException {
         List<Utilisateur> utilisateurList = new ArrayList<>();
         Utilisateur utilisateur;

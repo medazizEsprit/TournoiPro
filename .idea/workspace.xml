@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Studies/.idea/Studies.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
+      <change afterPath="$PROJECT_DIR$/fontawesomefx-8.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Images/connectionbackground.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gittest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -53,19 +53,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/medaz/OneDrive/Bureau/JavaFx Project/TournoiPro",
+    "last_opened_file_path": "C:/Users/medaz/OneDrive/Bureau/JavaFx Project/TournoiPro/fontawesomefx-8.2.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +88,17 @@
       <workItem from="1706868915995" duration="561000" />
       <workItem from="1706869506770" duration="1516000" />
       <workItem from="1707252793384" duration="8417000" />
+      <workItem from="1707336572155" duration="7826000" />
     </task>
+    <task id="LOCAL-00001" summary="Interface Ajout Joueur">
+      <option name="closed" value="true" />
+      <created>1707336777850</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707336777850</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,5 +114,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Interface Ajout Joueur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interface Ajout Joueur" />
   </component>
 </project>
