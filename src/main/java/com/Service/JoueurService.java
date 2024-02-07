@@ -27,9 +27,9 @@ public class JoueurService implements IService<Joueur> {
         {
             generatedID = utilisateurService.ajout(joueurToUtilisateur(joueur));
             System.out.println("ID : "+generatedID);
-            request ="INSERT INTO `joueur`(`ID_Joueur`, `ID_Equipe`, `Nbr_Buts`, `Nbr_Assists`, `Position`, `Capitaine`) " +
-                    "VALUES ('"+generatedID+"','"+joueur.getEquipe().getID_Equipe()+"','"+joueur.getNbr_Buts()+"','"+joueur.getNbr_Assists()+"','"+joueur.getPosition()+"','"+joueur.getCapitaine()+"')";
-            Datasource.getInstance().getCon().createStatement().executeUpdate(request, Statement.RETURN_GENERATED_KEYS);
+            request ="INSERT INTO `joueur`(`ID_Joueur`,`Nbr_Buts`, `Nbr_Assists`, `Position`, `Capitaine`) " +
+                    "VALUES ('"+generatedID+"','"+joueur.getNbr_Buts()+"','"+joueur.getNbr_Assists()+"','"+joueur.getPosition()+"','"+joueur.getCapitaine()+"')";
+            Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){
             System.out.println(exception);

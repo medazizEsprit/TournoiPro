@@ -50,6 +50,13 @@ public class Joueur extends Utilisateur {
         Position = position;
         Capitaine = capitaine;
     }
+    public Joueur(String login, String password, String firstName, String lastName,int nbr_Buts, int nbr_Assists, String position, int capitaine) {
+        super(login, password, "JOU", firstName, lastName);
+        Nbr_Buts = nbr_Buts;
+        Nbr_Assists = nbr_Assists;
+        Position = position;
+        Capitaine = capitaine;
+    }
 
     public int getID_Joueur() {
         return ID_Joueur;

@@ -1,7 +1,7 @@
 package com.tournoipro;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.*;
+import javafx.scene.control.*;
 
 public class HelloController {
     @FXML

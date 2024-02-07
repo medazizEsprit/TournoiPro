@@ -5,28 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Administrateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Equipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Participation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Stade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Utilisateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/AdministrateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/EquipeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/IService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/ParticipationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/StadeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Utils/Datasource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Studies/.idea/Studies.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gittest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +21,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -49,6 +44,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2bo4WQwm9OwJ9R0H6E35RB58Ezx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,6 +66,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,11 +86,22 @@
       <workItem from="1706868134793" duration="750000" />
       <workItem from="1706868915995" duration="561000" />
       <workItem from="1706869506770" duration="1516000" />
-      <workItem from="1707252793384" duration="541000" />
+      <workItem from="1707252793384" duration="8417000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
