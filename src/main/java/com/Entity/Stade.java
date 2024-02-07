@@ -23,7 +23,6 @@ public class Stade {
         Lieu = lieu;
     }
     public Stade(String nomStade, int numSpectateurs, String lieu) {
-        this.ID_Stade = 0;
         NomStade = nomStade;
         NumSpectateurs = numSpectateurs;
         Lieu = lieu;
