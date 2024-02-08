@@ -3,6 +3,7 @@ package com.tournoipro;
 import com.Entity.Utilisateur;
 import com.Service.UtilisateurService;
 import com.Utils.SwitchScenes;
+import com.Utils.UserMessages;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -33,12 +34,12 @@ public class ConnexionController {
         login.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.length() > 8) {
                 loginValid = false;
-                loginError.setText("Login ne doit pas dépasser 8 caractères");
+                loginError.setText("Identifiant ne doit pas dépasser 8 caractères");
             }
             else {
                 if (!newValue.matches("^[a-zA-Z0-9_]*$")){
                     loginValid = false;
-                    loginError.setText("Login doit contenir seuelement des caractères alphanumériques");
+                    loginError.setText("Identifiant doit contenir seuelement des caractères alphanumériques");
                 }
                 else {
                     loginError.setText("");
@@ -52,6 +53,8 @@ public class ConnexionController {
     public void Connect(Event event) throws SQLException {
         UtilisateurService utilisateurService = new UtilisateurService();
         Utilisateur utilisateur = utilisateurService.recuperer(login.getText(),password.getText());
+        if (utilisateur == null)
+            UserMessages.getInstance().Error("Utilisateur introuvable","Coordonnées erronées","Veuillez vérifier vos coordonnées");
         System.out.println(utilisateur);
     }
 
@@ -76,7 +79,7 @@ public class ConnexionController {
     }
 
     @FXML
-    public void goAddUser(Event event) throws IOException {
+    public void goInscrit(Event event) throws IOException {
         SwitchScenes.getInstance().Switch("inscription");
     }
 }

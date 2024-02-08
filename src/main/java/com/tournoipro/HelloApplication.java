@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 //        stage.setTitle("Connexion");
 //        stage.setScene(scene);
 //        stage.show();
-        SwitchScenes.getInstance().Switch("connexion",stage);
+        SwitchScenes.getInstance().Switch("ajoutEquipe",stage);
     }
 
     public static void main(String[] args) {

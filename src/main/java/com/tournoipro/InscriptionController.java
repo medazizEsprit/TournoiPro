@@ -1,12 +1,14 @@
 package com.tournoipro;
 import com.Entity.Joueur;
 import com.Service.JoueurService;
+import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.event.Event;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class InscriptionController {
@@ -35,6 +37,11 @@ public class InscriptionController {
     private boolean firstnameValid = true;
     private boolean lastnameValid = true;
     @FXML
+    private Label passwordError1;
+    @FXML
+    private Label loginError1;
+
+    @FXML
     public void Add(Event event) throws SQLException {
         if((loginValid && passwordValid && firstnameValid && lastnameValid && !(firstname.getText().isEmpty()||lastname.getText().isEmpty()||login.getText().isEmpty()||password.getText().isEmpty())))
         {
@@ -42,10 +49,10 @@ public class InscriptionController {
             if(!joueurService.VerifLogin(login.getText())){
                 Joueur joueur = new Joueur(login.getText(),password.getText(),firstname.getText(),lastname.getText(),0,0,"",0);
                 joueurService.ajout(joueur);
-            }else UserMessages.getInstance().Error("Ereur inscription","Identifiant existant","l'identifiant désiré existe déjà !!");
+            }else UserMessages.getInstance().Error("Erreur inscription","Identifiant existant","l'identifiant désiré existe déjà !!");
 
         }
-        else UserMessages.getInstance().Error("Ereur inscription","Champs invalides","Veuillez vérifier les champs !!");
+        else UserMessages.getInstance().Error("Erreur inscription","Champs invalides","Veuillez vérifier les champs !!");
     }
 
     @FXML
@@ -54,12 +61,12 @@ public class InscriptionController {
         login.textProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue.length() > 8) {
                 loginValid = false;
-                loginError.setText("Login ne doit pas dépasser 8 caractères");
+                loginError.setText("Identifiant ne doit pas dépasser 8 caractères");
             }
             else {
                 if (!newValue.matches("^[a-zA-Z0-9_]*$")){
                     loginValid = false;
-                    loginError.setText("Login doit contenir seuelement des caractères alphanumériques");
+                    loginError.setText("Identifiant doit contenir seuelement des caractères alphanumériques");
                 }
                 else {
                     loginError.setText("");
@@ -128,5 +135,10 @@ public class InscriptionController {
                 }
             }
         });
+    }
+
+    @FXML
+    public void goConnect(Event event) throws IOException {
+        SwitchScenes.getInstance().Switch("connexion");
     }
 }
