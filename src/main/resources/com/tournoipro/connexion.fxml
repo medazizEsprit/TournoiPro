@@ -17,8 +17,8 @@
    <right>
       <AnchorPane prefHeight="526.0" prefWidth="410.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="login" layoutX="75.0" layoutY="203.0" onKeyPressed="#VerifyLoginLength" prefHeight="26.0" prefWidth="258.0" promptText="Login" style="-fx-background-color: #2e4057; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
-            <PasswordField fx:id="password" layoutX="76.0" layoutY="282.0" prefHeight="26.0" prefWidth="257.0" promptText="Mot de passe" style="-fx-background-color: #2e4057; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="login" layoutX="75.0" layoutY="203.0" onKeyPressed="#VerifyLogin" prefHeight="26.0" prefWidth="258.0" promptText="Login" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="password" layoutX="76.0" layoutY="282.0" onKeyPressed="#VerifyPassword" prefHeight="26.0" prefWidth="257.0" promptText="Mot de passe" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
             <Button layoutX="137.0" layoutY="367.0" mnemonicParsing="false" onMouseClicked="#Connect" prefHeight="40.0" prefWidth="135.0" style="-fx-background-color: #2e4057;" text="Connecter" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="16.0" />

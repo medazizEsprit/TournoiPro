@@ -80,7 +80,6 @@ public class AddUserController {
                     passwordValid = true;
                 }
                 }
-
         });
     }
 

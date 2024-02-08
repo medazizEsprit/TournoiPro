@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
-      <change afterPath="$PROJECT_DIR$/fontawesomefx-8.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Images/connectionbackground.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AddUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../gittest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,6 +55,7 @@
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/medaz/OneDrive/Bureau/JavaFx Project/TournoiPro/fontawesomefx-8.2.jar",
     "node.js.detected.package.eslint": "true",
@@ -88,7 +87,8 @@
       <workItem from="1706868915995" duration="561000" />
       <workItem from="1706869506770" duration="1516000" />
       <workItem from="1707252793384" duration="8417000" />
-      <workItem from="1707336572155" duration="7826000" />
+      <workItem from="1707336572155" duration="7885000" />
+      <workItem from="1707424920387" duration="2696000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
@@ -98,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707336777850</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Interface Ajout Joueur">
+      <option name="closed" value="true" />
+      <created>1707347352346</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707347352346</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
