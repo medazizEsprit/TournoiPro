@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AddUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/connexionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/connexion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gittest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
       <workItem from="1706869506770" duration="1516000" />
       <workItem from="1707252793384" duration="8417000" />
       <workItem from="1707336572155" duration="7885000" />
-      <workItem from="1707424920387" duration="2696000" />
+      <workItem from="1707424920387" duration="3056000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
@@ -106,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707347352346</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Interface Ajout Joueur">
+      <option name="closed" value="true" />
+      <created>1707427708319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707427708319</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

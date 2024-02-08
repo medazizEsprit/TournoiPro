@@ -2,11 +2,13 @@ package com.tournoipro;
 
 import com.Entity.Utilisateur;
 import com.Service.UtilisateurService;
+import com.Utils.SwitchScenes;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -73,4 +75,8 @@ public class connexionController {
         });
     }
 
+    @FXML
+    public void goAddUser(Event event) throws IOException {
+        SwitchScenes.getInstance().Switch("AddUser");
+    }
 }
