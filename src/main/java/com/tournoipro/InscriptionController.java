@@ -1,15 +1,15 @@
 package com.tournoipro;
 import com.Entity.Joueur;
 import com.Service.JoueurService;
+import com.Utils.UserMessages;
 import javafx.event.Event;
 import javafx.fxml.*;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 import java.sql.SQLException;
 
-public class AddUserController {
+public class InscriptionController {
     @FXML
     private TextField firstname;
     @FXML
@@ -36,9 +36,16 @@ public class AddUserController {
     private boolean lastnameValid = true;
     @FXML
     public void Add(Event event) throws SQLException {
-        JoueurService joueurService = new JoueurService();
-        Joueur joueur = new Joueur(login.getText(),password.getText(),firstname.getText(),lastname.getText(),0,0,"",0);
-        joueurService.ajout(joueur);
+        if((loginValid && passwordValid && firstnameValid && lastnameValid && !(firstname.getText().isEmpty()||lastname.getText().isEmpty()||login.getText().isEmpty()||password.getText().isEmpty())))
+        {
+            JoueurService joueurService = new JoueurService();
+            if(!joueurService.VerifLogin(login.getText())){
+                Joueur joueur = new Joueur(login.getText(),password.getText(),firstname.getText(),lastname.getText(),0,0,"",0);
+                joueurService.ajout(joueur);
+            }else UserMessages.getInstance().Error("Ereur inscription","Identifiant existant","l'identifiant désiré existe déjà !!");
+
+        }
+        else UserMessages.getInstance().Error("Ereur inscription","Champs invalides","Veuillez vérifier les champs !!");
     }
 
     @FXML

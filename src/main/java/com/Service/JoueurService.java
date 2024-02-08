@@ -103,4 +103,18 @@ public class JoueurService implements IService<Joueur> {
         joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (11), resultSet.getInt(12));
         return joueur;
     }
+    public Boolean VerifLogin(String login) throws SQLException {
+        boolean exist = false;
+        try{
+            request = "SELECT * FROM utilisateur WHERE Login ='"+login+"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                return true;
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return exist;
+    }
 }

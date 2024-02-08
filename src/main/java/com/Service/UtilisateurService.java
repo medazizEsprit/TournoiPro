@@ -86,6 +86,7 @@ public class UtilisateurService implements IService<Utilisateur> {
         return utilisateur;
     }
 
+
     public List<Utilisateur> getListUtilisateur() throws SQLException {
         List<Utilisateur> utilisateurList = new ArrayList<>();
         Utilisateur utilisateur;

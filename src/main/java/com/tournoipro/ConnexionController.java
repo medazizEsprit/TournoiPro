@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 
-public class connexionController {
+public class ConnexionController {
     @javafx.fxml.FXML
     private TextField login;
     @javafx.fxml.FXML
@@ -77,6 +77,6 @@ public class connexionController {
 
     @FXML
     public void goAddUser(Event event) throws IOException {
-        SwitchScenes.getInstance().Switch("AddUser");
+        SwitchScenes.getInstance().Switch("inscription");
     }
 }
