@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 //        stage.setTitle("Hello!");
 //        stage.setScene(scene);
 //        stage.show();
-        SwitchScenes.getInstance().Switch("AjouterTournoi",stage);
+        SwitchScenes.getInstance().Switch("ListStade",stage);
     }
 
     public static void main(String[] args) {

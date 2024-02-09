@@ -2,19 +2,25 @@ package com.tournoipro;
 
 import com.Entity.Stade;
 import com.Service.StadeService;
+import com.Utils.SwitchScenes;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
 
 public class ListStadeController implements Initializable {
 
@@ -95,6 +101,11 @@ public class ListStadeController implements Initializable {
         } else {
             System.out.println("Aucun stade sélectionné.");
         }
+    }
+
+    @FXML
+    void GoModifier(ActionEvent event) throws IOException {
+        SwitchScenes.getInstance().Switch("ModifierStade", (Stage) (((Node) event.getSource()).getScene().getWindow()));
     }
 
 }
