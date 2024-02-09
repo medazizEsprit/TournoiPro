@@ -67,6 +67,14 @@ public class Tournoi {
         Createur = createur;
     }
 
+    public Tournoi(String nom_Tournoi, Date date_Debut, Date date_Fin, int nbr_Equipe, Utilisateur createur) {
+        Nom_Tournoi = nom_Tournoi;
+        Date_Debut = date_Debut;
+        Date_Fin = date_Fin;
+        Nbr_Equipe = nbr_Equipe;
+        Createur = createur;
+    }
+
     public Tournoi() {
     }
 }

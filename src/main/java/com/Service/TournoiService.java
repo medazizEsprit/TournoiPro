@@ -18,9 +18,9 @@ public class TournoiService implements IService<Tournoi>{
     public int ajout(Tournoi tournoi) throws SQLException {
         int generatedID = 0;
         try {
-            request = "INSERT INTO `tournoi`(`ID_Tournoi`, `Nom_Tournoi`, `Date_Debut`, `Date_Fin`, `Nbr_Equipe`, `ID_Createur`) " +
-                    "VALUES ('" + tournoi.getID_Tournoi() + "','" + tournoi.getNom_Tournoi() + "','" + tournoi.getDate_Debut() + "','" +
-                    tournoi.getDate_Fin() + "','" + tournoi.getNbr_Equipe() + "','" + tournoi.getCreateur() + "')";
+            request = "INSERT INTO `tournoi`( `Nom_Tournoi`, `Date_Debut`, `Date_Fin`, `Nbr_Equipe`, `ID_Createur`) " +
+                    "VALUES ('" + tournoi.getNom_Tournoi() + "','" + tournoi.getDate_Debut().getYear() + "-" + tournoi.getDate_Debut().getMonth() + "-" + tournoi.getDate_Debut().getDay() + "','" +
+                    tournoi.getDate_Fin().getYear() + "-" + tournoi.getDate_Fin().getMonth() + "-" + tournoi.getDate_Fin().getDay() + "'," + tournoi.getNbr_Equipe() + "," + tournoi.getCreateur().getID_Utilisateur() + ")";
             generatedID = Datasource.getInstance().getCon().createStatement().executeUpdate(request, Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException exception) {
             System.out.println(exception);

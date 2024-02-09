@@ -77,6 +77,10 @@ public class Utilisateur {
         LastName = lastName;
     }
 
+    public Utilisateur(int ID_Utilisateur) {
+        this.ID_Utilisateur = ID_Utilisateur;
+    }
+
     @Override
     public String toString() {
         return "Utilisateur{" +
