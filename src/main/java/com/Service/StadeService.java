@@ -46,6 +46,16 @@ public class StadeService implements IService<Stade>{
             System.out.println(exception);
         };
     }
+    public void supprimer(String NomStade) throws SQLException {
+        try
+        {
+            request ="DELETE FROM  stade  WHERE NomStade ='"+NomStade+"'";
+            Datasource.getInstance().getCon().createStatement().executeUpdate(request);
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+    }
 
     @Override
     public void modifier(Stade stade) throws SQLException {

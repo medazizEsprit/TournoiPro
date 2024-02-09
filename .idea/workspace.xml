@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListStadeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Stade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Stade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/StadeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/StadeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,18 +21,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-<<<<<<< HEAD
-        <option value="FxmlFile" />
-        <option value="Class" />
-=======
         <option value="Class" />
         <option value="FxmlFile" />
->>>>>>> rayen
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -44,7 +44,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2bo4WQwm9OwJ9R0H6E35RB58Ezx" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -57,15 +57,10 @@
     "Application.HelloApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-<<<<<<< HEAD
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/medaz/OneDrive/Bureau/JavaFx Project/TournoiPro/fontawesomefx-8.2.jar",
-=======
     "WebServerToolWindowFactoryState": "false",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/rayen/Downloads/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar",
->>>>>>> rayen
+    "last_opened_file_path": "C:/Users/Lenovo/SceneBuilder/SceneBuilder.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,17 +89,10 @@
       <workItem from="1706868134793" duration="750000" />
       <workItem from="1706868915995" duration="561000" />
       <workItem from="1706869506770" duration="1516000" />
-<<<<<<< HEAD
       <workItem from="1707252793384" duration="8417000" />
       <workItem from="1707336572155" duration="7885000" />
       <workItem from="1707424920387" duration="8594000" />
-=======
-      <workItem from="1707252793384" duration="541000" />
-      <workItem from="1707254934062" duration="399000" />
-      <workItem from="1707255410059" duration="1354000" />
-      <workItem from="1707332561832" duration="5255000" />
-      <workItem from="1707339940167" duration="4598000" />
->>>>>>> rayen
+      <workItem from="1707476972937" duration="8921000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
@@ -167,5 +155,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Interface Ajout Joueur" />
     <option name="LAST_COMMIT_MESSAGE" value="Interface Ajout Joueur" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tournoipro/ListStadeController.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
