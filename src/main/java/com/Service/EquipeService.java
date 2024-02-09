@@ -20,8 +20,8 @@ public class EquipeService implements IService<Equipe> {
     public int ajout(Equipe equipe) throws SQLException {
         int generatedID = 0;
         try {
-            String request = "INSERT INTO `equipe`(`ID_Equipe`, `Nom_Equipe`, `Nbr_Joueur`) " +
-                    "VALUES ('" + equipe.getID_Equipe() + "','" + equipe.getNom_Equipe() + "','" + equipe.getNbr_Joueur() + "')";
+            String request = "INSERT INTO `equipe`(`Nom_Equipe`, `Nbr_Joueur`) " +
+                    "VALUES ('" + equipe.getNom_Equipe() + "','" + equipe.getNbr_Joueur() + "')";
             Statement statement = Datasource.getInstance().getCon().createStatement();
             generatedID = statement.executeUpdate(request, Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException exception) {
@@ -65,6 +65,20 @@ public class EquipeService implements IService<Equipe> {
             System.out.println(exception);
         }
         return equipe;
+    }
+
+    public boolean existName(String nom) throws  SQLException{
+        boolean exist = false;
+        try {
+            String request = "SELECT * FROM `equipe` WHERE `Nom_Equipe`='" + nom +"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                exist = true;
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception);
+        }
+        return exist;
     }
 }
 

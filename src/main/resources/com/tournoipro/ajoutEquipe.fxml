@@ -20,14 +20,14 @@
                </font>
             </Label>
             <TextField fx:id="nomEquipe" layoutX="171.0" layoutY="127.0" onKeyPressed="#VerifyName" prefHeight="26.0" prefWidth="258.0" promptText="Nom équipe" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextField fx:id="nbrJoueurs" layoutX="171.0" layoutY="193.0" onKeyPressed="#VerifyNumber" prefHeight="26.0" prefWidth="258.0" promptText="Nombre joueurs" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="nbrJoueurs" layoutX="171.0" layoutY="203.0" onKeyPressed="#VerifyNumber" prefHeight="26.0" prefWidth="258.0" promptText="Nombre joueurs" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
             <Button layoutX="260.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#Add" prefHeight="37.0" prefWidth="93.0" style="-fx-background-color: #2e4057;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label fx:id="nomErreur" layoutX="171.0" layoutY="165.0" prefHeight="18.0" textFill="RED" />
-            <Label fx:id="nbrJoueursErreur" layoutX="171.0" layoutY="229.0" prefHeight="18.0" textFill="RED" />
+            <Label fx:id="nomErreur" layoutX="171.0" layoutY="165.0" textFill="RED" />
+            <Label fx:id="nbrJoueursErreur" layoutX="171.0" layoutY="239.0" prefHeight="18.0" textFill="RED" />
          </children>
       </AnchorPane>
    </center>
