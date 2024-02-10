@@ -44,11 +44,8 @@ public class ListJoueurController implements Initializable {
     private ImageView Captin;
 
     JoueurService joueurservice = new JoueurService();
-    EquipeService equipeservice = new EquipeService();
     UtilisateurService utilisateurservice= new UtilisateurService();
     List<Joueur> listjoueur;
-    List<String> listuser;
-    List<Equipe> listequipe;
     List<String> listLibelle = new ArrayList<>();
     String CurrentJoueur;
     Joueur joueur;
@@ -77,13 +74,14 @@ public class ListJoueurController implements Initializable {
         NbrButs.setVisible(false);
         NbrAssists.setVisible(false);
         Position.setVisible(false);
-        Captin.setVisible(true);
+        btnsup.setVisible(false);
+       Captin.setVisible(false);
         ListJoueur.getItems().addAll(listLibelle);
         ListJoueur.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-
+                btnsup.setVisible(true);
                 CurrentJoueur = ListJoueur.getSelectionModel().getSelectedItem();
                 String Nom = CurrentJoueur.substring(0, CurrentJoueur.indexOf(' '));
                 NomJoueur.setVisible(true);
@@ -106,35 +104,35 @@ public class ListJoueurController implements Initializable {
                 NbrButs.setText(Integer.toString(joueur.getNbr_Buts()));
                 NbrAssists.setText(Integer.toString(joueur.getNbr_Assists()));
                 Position.setText(joueur.getPosition());
-                /*if (joueur.getCapitaine()==1){
+                if (joueur.getCapitaine()==1){
                     Captin.setVisible(true);
-                }*/
+                }
 
-              /*  btnsup.setOnAction(event -> {
+
+                btnsup.setOnAction(event -> {
                     try {
                         supprimerStadeSelectionne();
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
-                });*/
+                });
             }
         });
     }
 
-  /*  private void supprimerStadeSelectionne() throws SQLException {
+    private void supprimerStadeSelectionne() throws SQLException {
         // Récupérer l'index de l'élément sélectionné
-        int selectedIndex = ListStade.getSelectionModel().getSelectedIndex();
-        String selectedName = ListStade.getSelectionModel().getSelectedItem();
-
+        int selectedIndex = ListJoueur.getSelectionModel().getSelectedIndex();
+        String selectedName = ListJoueur.getSelectionModel().getSelectedItem();
         // Vérifier si un élément est sélectionné
         if (selectedIndex >= 0) {
             // Supprimer l'élément de la liste
-            ListStade.getItems().remove(selectedIndex);
-            stadeService.supprimer(selectedName);
-            System.out.println("Stade supprimé avec succès.");
+            ListJoueur.getItems().remove(selectedIndex);
+            joueurservice.supprimerWithName(selectedName);
+            System.out.println("Joueur supprimé avec succès.");
         } else {
-            System.out.println("Aucun stade sélectionné.");
+            System.out.println("Joueur stade sélectionné.");
         }
-    }*/
+    }
 
 }

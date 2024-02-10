@@ -43,9 +43,9 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="Captin" disable="true" fitHeight="68.0" fitWidth="79.0" layoutX="500.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Captin" cache="true" disable="true" fitHeight="68.0" fitWidth="79.0" layoutX="500.0" layoutY="166.0" pickOnBounds="true" smooth="false">
          <image>
-            <Image url="@../../../java/com/Images/capitaine.png" />
+            <Image url="@capitaine.png" />
          </image></ImageView>
       <Label fx:id="NbrButs" layoutX="437.0" layoutY="185.0" text="Label">
          <font>
