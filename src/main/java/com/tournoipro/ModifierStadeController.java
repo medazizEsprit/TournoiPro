@@ -2,14 +2,22 @@ package com.tournoipro;
 
 import com.Entity.Stade;
 import com.Service.StadeService;
+import com.Utils.SwitchScenes;
+import com.Utils.UserMessages;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
-public class ModifierStadeController {
+import java.net.URL;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+public class ModifierStadeController implements Initializable {
     @FXML
     private Button BtnModif;
 
@@ -31,8 +39,26 @@ public class ModifierStadeController {
     @FXML
     private Label nbPartError;
 
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+        StadeService stadeService = new StadeService();
+        try {
+            Stade stade = stadeService.recuperer(id);
+            NomST.setText(stade.getNomStade());
+            Lieu.setText(stade.getLieu());
+            NbPart.setText(Integer.toString(stade.getNumSpectateurs()));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
     @FXML
     void BtnModifier(ActionEvent event) {
+        var a = id;
         if(NomST.getText().length() == 0){
             nomSTError.setText("Nom du stade est obligatoire");
         }else {
@@ -47,10 +73,14 @@ public class ModifierStadeController {
                     try {
                         int d = Integer.parseInt(NbPart.getText());
                         nbPartError.setText("");
-                        Stade stade = new Stade(NomST.getText(), Integer.parseInt(NbPart.getText()), Lieu.getText());
+                        Stade stade = new Stade(id ,NomST.getText(), Integer.parseInt(NbPart.getText()), Lieu.getText());
                         StadeService stadeService = new StadeService();
                         try {
                             stadeService.modifier(stade);
+                            Optional<ButtonType> result= UserMessages.getInstance().Information("Information","Stade modifié","Stade modifié avec succès");
+                            if (result.get() == ButtonType.OK){
+                                SwitchScenes.getInstance().Switch("ListStade");
+                            }
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }
@@ -103,5 +133,10 @@ public class ModifierStadeController {
             if (isValid)
                 nbPartError.setText("");
         });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

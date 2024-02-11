@@ -7,6 +7,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -105,7 +106,8 @@ public class ListStadeController implements Initializable {
 
     @FXML
     void GoModifier(ActionEvent event) throws IOException {
-        SwitchScenes.getInstance().Switch("ModifierStade", (Stage) (((Node) event.getSource()).getScene().getWindow()));
+        SwitchScenes.getInstance().SwitchToUpdateStade("ModifierStade", (Stage) (((Node) event.getSource()).getScene().getWindow()), stade.getID_Stade());
+
     }
 
 }
