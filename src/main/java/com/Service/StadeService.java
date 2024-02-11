@@ -72,7 +72,7 @@ public class StadeService implements IService<Stade>{
     public Stade recuperer(int idStade) throws SQLException {
         Stade stade = null;
         try{
-            request = "SELECT * FROM stade WHERE ID_Stade='"+idStade+"'";
+            request = "SELECT * FROM stade WHERE ID_Stade="+idStade;
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
                 stade=new Stade(resultSet.getInt(1),resultSet.getString(2),resultSet.getInt(3),resultSet.getString(4));

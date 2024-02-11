@@ -1,6 +1,9 @@
 package com.Utils;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
+import java.util.Optional;
 
 public class UserMessages {
     static UserMessages userMessages;
@@ -23,11 +26,11 @@ public class UserMessages {
         alert.setHeaderText(header);
         alert.showAndWait();
     }
-    public void Information (String title,String header,String content){
+    public Optional<ButtonType> Information (String title, String header, String content){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setContentText(content);
         alert.setHeaderText(header);
-        alert.showAndWait();
+        return alert.showAndWait();
     }
 }
