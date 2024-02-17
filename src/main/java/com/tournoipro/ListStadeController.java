@@ -7,8 +7,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -31,10 +36,18 @@ public class ListStadeController implements Initializable {
     private Button btnsup;
 
     StadeService stadeService = new StadeService();
+    ///liste stade
     List<Stade> liststade;
+    //// liste Libelle
     List<String> listLibelle = new ArrayList<>();
+    //// Current Stade
     String CurrentStade;
     Stade stade;
+    @FXML
+    ImageView Map1;
+    @FXML
+    Hyperlink link;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,8 +65,14 @@ public class ListStadeController implements Initializable {
         LieuStade.setVisible(false);
         NumSpectateurs.setVisible(false);
         ListStade.getItems().addAll(listLibelle);
-        ListStade.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 
+
+        link.setGraphic(Map1);
+        link.setOnAction(event -> {
+            // Replace with the action you want to perform, such as opening a web page
+            System.out.println("Image link clicked!");
+        });
+        ListStade.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
 
