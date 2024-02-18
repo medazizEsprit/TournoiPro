@@ -94,12 +94,18 @@ public class JoueurService implements IService<Joueur> {
         Joueur joueur;
 
         try{
-            request = "SELECT * FROM utilisateur,joueur,equipe WHERE ID_Joueur = ID_Utilisateur AND equipe.ID_Equipe = joueur.ID_Equipe;";
+            request = "SELECT * FROM utilisateur,joueur,equipe WHERE ID_Joueur = ID_Utilisateur AND equipe.ID_Equipe = joueur.ID_Equipe ;";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
                 joueur = getJoueur();
                 JoueurList.add(joueur);
                 }
+            request = "SELECT * FROM utilisateur,joueur WHERE ID_Joueur = ID_Utilisateur AND joueur.ID_Equipe IS NULL ;";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                joueur = getJoueurWithouTeam();
+                JoueurList.add(joueur);
+            }
         }
         catch (SQLException exception){
             System.out.println(exception);
@@ -110,6 +116,12 @@ public class JoueurService implements IService<Joueur> {
     private Joueur getJoueur() throws SQLException {
         Joueur joueur;
         Equipe equipe = new Equipe(resultSet.getInt(13),resultSet.getString(14),resultSet.getInt(15));
+        joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (11), resultSet.getInt(12));
+        return joueur;
+    }
+    private Joueur getJoueurWithouTeam() throws SQLException {
+        Joueur joueur;
+        Equipe equipe = new Equipe(0,"Sans Equipe",0);
         joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (11), resultSet.getInt(12));
         return joueur;
     }

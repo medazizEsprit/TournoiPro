@@ -5,7 +5,6 @@ import com.Service.EquipeService;
 import com.Utils.SwitchScenes;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -15,15 +14,14 @@ import java.sql.SQLException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ListStade1.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 340);
-        stage.setTitle("TournoiPro");
-        stage.setScene(scene);
-        stage.show();
+//       FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ListStade.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 500, 340);
+//        stage.setTitle("Hello!");
+//       stage.setScene(scene);
+//        stage.show();
+        SwitchScenes.getInstance().Switch("ListJoueurAdmin",stage);
     }
-
     public static void main(String[] args) {
-
         launch();
     }
 }
