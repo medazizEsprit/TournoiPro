@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EquipeService implements IService<Equipe> {
 
@@ -20,8 +22,8 @@ public class EquipeService implements IService<Equipe> {
     public int ajout(Equipe equipe) throws SQLException {
         int generatedID = 0;
         try {
-            String request = "INSERT INTO `equipe`(`ID_Equipe`, `Nom_Equipe`, `Nbr_Joueur`) " +
-                    "VALUES ('" + equipe.getID_Equipe() + "','" + equipe.getNom_Equipe() + "','" + equipe.getNbr_Joueur() + "')";
+            String request = "INSERT INTO `equipe`(`Nom_Equipe`, `Nbr_Joueur`) " +
+                    "VALUES ('" + equipe.getNom_Equipe() + "','" + equipe.getNbr_Joueur() + "')";
             Statement statement = Datasource.getInstance().getCon().createStatement();
             generatedID = statement.executeUpdate(request, Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException exception) {
@@ -66,5 +68,38 @@ public class EquipeService implements IService<Equipe> {
         }
         return equipe;
     }
+
+    public boolean existName(String nom) throws  SQLException{
+        boolean exist = false;
+        try {
+            String request = "SELECT * FROM `equipe` WHERE `Nom_Equipe`='" + nom +"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                exist = true;
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception);
+        }
+        return exist;
+    }
+
+    public List<Equipe> getListEquipe() throws SQLException {
+        List<Equipe> equipeList = new ArrayList<>();
+        Equipe equipe;
+        try{
+            request = "SELECT * FROM equipe";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                equipe= new Equipe(resultSet.getInt(1),resultSet.getString(2),
+                        resultSet.getInt(3));
+                equipeList.add(equipe);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return equipeList;
+    }
+
 }
 

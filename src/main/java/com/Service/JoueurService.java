@@ -50,6 +50,16 @@ public class JoueurService implements IService<Joueur> {
             System.out.println(exception);
         };
     }
+    public void supprimerWithName(String Nom) throws SQLException {
+        try
+        {
+            //ON DELETE CASCADE
+            utilisateurService.supprimer(Nom);
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+    }
 
     @Override
     public void modifier(Joueur joueur) throws SQLException {

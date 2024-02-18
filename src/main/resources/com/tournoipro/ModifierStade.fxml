@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tournoipro.ModifierStadeController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Button id="BtnModif" fx:id="BtnModif" layoutX="365.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnModifier" text="Modifier" />
+        <Label layoutX="72.0" layoutY="53.0" text="Nom du stade" />
+        <Label layoutX="72.0" layoutY="131.0" text="Lieu" />
+        <Label layoutX="72.0" layoutY="212.0" text="Nombre de participants" />
+        <TextField fx:id="NomST" layoutX="71.0" layoutY="78.0" onKeyPressed="#VerifyNomST" />
+        <Label fx:id="nomSTError" layoutX="73.0" layoutY="110.0" prefHeight="18.0" textFill="RED" />
+        <TextField fx:id="Lieu" layoutX="71.0" layoutY="157.0" onKeyPressed="#VerifyLieu" />
+        <Label fx:id="lieuError" layoutX="73.0" layoutY="190.0" prefHeight="18.0" textFill="RED" />
+        <TextField fx:id="NbPart" layoutX="71.0" layoutY="237.0" onKeyPressed="#VerifyNbPart" />
+        <Label fx:id="nbPartError" layoutX="73.0" layoutY="270.0" prefHeight="18.0" textFill="RED" />
+    </children>
+</AnchorPane>

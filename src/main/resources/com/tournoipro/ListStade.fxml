@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<<<<<<< HEAD
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.ListStadeController">
+=======
+<AnchorPane fx:id="Map" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.ListStadeController">
+>>>>>>> leith
+   <children>
+      <ListView fx:id="ListStade" layoutX="14.0" layoutY="95.0" prefHeight="210.0" prefWidth="223.0" />
+      <Label layoutX="209.0" layoutY="14.0" prefHeight="59.0" prefWidth="223.0" text="Liste Stade">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="Nom" layoutX="286.0" layoutY="101.0" prefHeight="34.0" prefWidth="124.0" text="Nom Stade :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="NUM" layoutX="286.0" layoutY="169.0" text="NumSpectateurs :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Lieu" layoutX="286.0" layoutY="257.0" text="Lieu :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomStade" layoutX="419.0" layoutY="103.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="NumSpectateurs" layoutX="466.0" layoutY="169.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="LieuStade" layoutX="340.0" layoutY="257.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnsup" layoutX="211.0" layoutY="335.0" mnemonicParsing="false" text="Supprimer" />
+<<<<<<< HEAD
+      <Button layoutX="379.0" layoutY="335.0" mnemonicParsing="false" onAction="#GoModifier" text="Modifier" />
+=======
+      <Button layoutX="379.0" layoutY="335.0" mnemonicParsing="false" text="Modifier" />
+      <ImageView fx:id="Map1" fitHeight="34.0" fitWidth="46.0" layoutX="252.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@carte.png" />
+         </image>
+      </ImageView>
+      <Hyperlink fx:id="link" layoutX="514.0" layoutY="276.0" text="Hyperlink" />
+      <TextField layoutX="61.0" layoutY="73.0" />
+>>>>>>> leith
+   </children>
+</AnchorPane>
