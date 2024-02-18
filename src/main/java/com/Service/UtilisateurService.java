@@ -45,6 +45,19 @@ public class UtilisateurService implements IService<Utilisateur> {
             System.out.println(exception);
         };
     }
+    public void supprimer(String Name) throws SQLException {
+        String firstname =Name.substring(0, Name.indexOf(' '));
+
+        String lastname=Name.substring(Name.indexOf(' ')+1);
+        try
+        {
+            request ="DELETE FROM  utilisateur  WHERE FirstName ='"+firstname+"' AND LastName  ='"+lastname+"'";
+            Datasource.getInstance().getCon().createStatement().executeUpdate(request);
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+    }
     @Override
     public void modifier(Utilisateur utilisateur) throws SQLException {
         try{

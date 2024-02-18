@@ -15,12 +15,11 @@ import java.sql.SQLException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-    Parent root = FXMLLoader.load(getClass().getResource("HomeJoueur.fxml"));
-    Scene sc = new Scene(root);
-    stage.setScene(sc);
-    stage.show();
-
-    //SwitchScenes.getInstance().Switch("ListEquipe",stage, new ListEquipeController(), "");
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ListStade1.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 340);
+        stage.setTitle("TournoiPro");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static void main(String[] args) {
