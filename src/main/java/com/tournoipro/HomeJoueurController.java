@@ -13,7 +13,7 @@ public class HomeJoueurController {
     public void checkEquipe(ActionEvent event) {
             try {
                 //test en dur
-                SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), 1);
+                SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), 2);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
