@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EquipeService implements IService<Equipe> {
 
@@ -80,5 +82,24 @@ public class EquipeService implements IService<Equipe> {
         }
         return exist;
     }
+
+    public List<Equipe> getListEquipe() throws SQLException {
+        List<Equipe> equipeList = new ArrayList<>();
+        Equipe equipe;
+        try{
+            request = "SELECT * FROM equipe";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                equipe= new Equipe(resultSet.getInt(1),resultSet.getString(2),
+                        resultSet.getInt(3));
+                equipeList.add(equipe);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return equipeList;
+    }
+
 }
 

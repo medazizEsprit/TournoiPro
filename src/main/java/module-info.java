@@ -12,6 +12,7 @@ module com.tournoipro {
     requires com.almasb.fxgl.all;
     requires java.sql;
 
+    opens com.Entity;
     opens com.tournoipro to javafx.fxml;
     exports com.tournoipro;
 }
