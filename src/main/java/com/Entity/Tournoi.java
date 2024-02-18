@@ -10,6 +10,10 @@ public class Tournoi {
     private int Nbr_Equipe;
     private Utilisateur Createur;
 
+    public Tournoi(int ID_Tournoi) {
+        this.ID_Tournoi = ID_Tournoi;
+    }
+
     public int getID_Tournoi() {
         return ID_Tournoi;
     }

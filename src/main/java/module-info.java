@@ -14,4 +14,5 @@ module com.tournoipro {
     opens com.tournoipro;
     opens com.Entity;
     exports com.tournoipro;
+    opens com.Entity.ListView;
 }
