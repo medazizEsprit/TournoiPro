@@ -6,13 +6,17 @@ import com.Entity.*;
 import com.Utils.Datasource;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TournoiService implements IService<Tournoi>{
     Connection con;
     Statement statement;
     String request;
+    ResultSet resultSet;
 
     @Override
     public int ajout(Tournoi tournoi) throws SQLException {
@@ -54,5 +58,22 @@ public class TournoiService implements IService<Tournoi>{
     public Tournoi recuperer(int idTournoi) throws SQLException {
         // Implémenter la logique pour récupérer un tournoi
         return null;
+    }
+
+    public List<Tournoi> getListTournoi() throws SQLException {
+        List<Tournoi> tournoiList = new ArrayList<>();
+        Tournoi tournoi;
+        try{
+            request = "SELECT * FROM tournoi";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                tournoi =new Tournoi(resultSet.getInt("ID_Tournoi"), resultSet.getString("Nom_Tournoi"),resultSet.getDate("Date_Debut"),resultSet.getDate("Date_Fin"),resultSet.getInt("Nbr_Equipe"),new Utilisateur(resultSet.getInt("ID_Createur")));
+                tournoiList.add(tournoi);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return tournoiList;
     }
 }
