@@ -21,6 +21,12 @@ public class Partie {
         this.stade = stade;
     }
 
+    public Partie(int id, Date dateMatch, int score) {
+        this.id = id;
+        this.dateMatch = dateMatch;
+        this.score = score;
+    }
+
     public Stade getStade() {
         return stade;
     }

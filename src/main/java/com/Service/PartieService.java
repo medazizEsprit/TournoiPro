@@ -8,7 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 public class PartieService implements IService<Partie>{
     Connection con;
@@ -45,7 +47,9 @@ public class PartieService implements IService<Partie>{
     @Override
     public void modifier(Partie partie) throws SQLException {
         try{
-            request = "UPDATE `partie` SET `ID_Partie`='"+partie.getId()+"',`Date_Partie`='"+partie.getDateMatch()+"',`Score_Partie`='"+partie.getScore()+"',`Equipe1_ID`='"+partie.getEquipe1()+"',`Equipe2_ID`='"+partie.getEquipe2()+"' WHERE `ID_Utilisateur`='"+partie.getId()+"'";
+            Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
+            cal.setTime(partie.getDateMatch());
+            request = "UPDATE `partie` SET `Date_Partie`='"+cal.get(Calendar.YEAR)+"-"+(cal.get(Calendar.MONTH)+1)+"-"+cal.get(Calendar.DAY_OF_MONTH)+"',`Score_Partie`="+partie.getScore()+" WHERE `ID_Partie`="+partie.getId();
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){
