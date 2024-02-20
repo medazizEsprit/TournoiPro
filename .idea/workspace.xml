@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="645ac303-13f8-47d1-91a8-8132c57ca383" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListEquipeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListEquipe.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="645ac303-13f8-47d1-91a8-8132c57ca383" name="Changes" comment="ons's commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/EquipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/EquipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Equipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Equipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Stade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Stade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Utils/SwitchScenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeJoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeJoueurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeJoueur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeJoueur.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +31,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ons2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6d95feed-98d0-4465-b6d3-28632bec7b88" />
+        <option name="url" value="https://github.com/medazizEsprit/TournoiPro.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -104,12 +112,27 @@
       <workItem from="1707941641531" duration="1898000" />
       <workItem from="1708092912792" duration="8226000" />
       <workItem from="1708102954522" duration="11982000" />
-      <workItem from="1708184325483" duration="7754000" />
+      <workItem from="1708184325483" duration="9308000" />
+      <workItem from="1708202527594" duration="2021000" />
+      <workItem from="1708265529874" duration="7255000" />
     </task>
+    <task id="LOCAL-00001" summary="ons's commit">
+      <option name="closed" value="true" />
+      <created>1708192366479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708192366479</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ons's commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="ons's commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -119,7 +142,62 @@
           <line>22</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterTournoiController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.Service.PartieService" memberName="resultSet" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

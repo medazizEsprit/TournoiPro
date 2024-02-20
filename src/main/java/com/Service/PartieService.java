@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PartieService implements IService<Partie>{
     Connection con;
@@ -55,6 +57,27 @@ public class PartieService implements IService<Partie>{
     @Override
     public Partie recuperer(int idPartie) throws SQLException {
         return null;
+    }
+
+    public List<Partie> getListPartie() throws SQLException {
+        List<Partie> partieList = new ArrayList<>();
+        Partie partie;
+        try{
+            request = "SELECT * FROM partie";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                Equipe equipe1 = new Equipe(resultSet.getInt(4));
+                Equipe equipe2 = new Equipe(resultSet.getInt(5));
+                Tournoi tournoi = new Tournoi(resultSet.getInt(6));
+                Stade stade = new Stade(resultSet.getInt(7));
+                partie=new Partie(resultSet.getInt(1),resultSet.getDate(2),resultSet.getInt(3),equipe1, equipe2, tournoi, stade);
+                partieList.add(partie);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return partieList;
     }
 
 

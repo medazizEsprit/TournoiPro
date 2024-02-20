@@ -6,13 +6,16 @@ import com.Entity.*;
 import com.Utils.Datasource;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 public class TournoiService implements IService<Tournoi>{
     Connection con;
     Statement statement;
     String request;
+    ResultSet resultSet;
 
     @Override
     public int ajout(Tournoi tournoi) throws SQLException {
@@ -52,7 +55,24 @@ public class TournoiService implements IService<Tournoi>{
 
     @Override
     public Tournoi recuperer(int idTournoi) throws SQLException {
-        // Implémenter la logique pour récupérer un tournoi
-        return null;
+        Tournoi tournoi = null;
+        try{
+            request = "SELECT * FROM tournoi WHERE ID_Tournoi ='"+idTournoi+"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                tournoi = getTournoi();
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return tournoi;
+    }
+
+    private Tournoi getTournoi() throws SQLException {
+        Tournoi tournoi;
+        Utilisateur user = new Utilisateur(resultSet.getInt(6));
+        tournoi = new Tournoi(resultSet.getInt(1),resultSet.getString(2), resultSet.getDate(3), resultSet.getDate(4), resultSet.getInt(5), user);
+        return tournoi;
     }
 }

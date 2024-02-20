@@ -67,6 +67,10 @@ public class Tournoi {
         Createur = createur;
     }
 
+    public Tournoi(int ID_Tournoi) {
+        this.ID_Tournoi = ID_Tournoi;
+    }
+
     public Tournoi(String nom_Tournoi, Date date_Debut, Date date_Fin, int nbr_Equipe, Utilisateur createur) {
         Nom_Tournoi = nom_Tournoi;
         Date_Debut = date_Debut;

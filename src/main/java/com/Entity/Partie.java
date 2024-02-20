@@ -7,6 +7,17 @@ public class Partie {
     private Date dateMatch;
     private int score;
     private Equipe equipe1;
+
+    public Partie(int id, Date dateMatch, int score, Equipe equipe1, Equipe equipe2, Tournoi tournoi, Stade stade) {
+        this.id = id;
+        this.dateMatch = dateMatch;
+        this.score = score;
+        this.equipe1 = equipe1;
+        this.equipe2 = equipe2;
+        this.tournoi = tournoi;
+        this.stade = stade;
+    }
+
     private Equipe equipe2;
     private Tournoi tournoi;
     private Stade stade;

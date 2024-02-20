@@ -2,6 +2,7 @@ package com.Utils;
 
 import com.Entity.Stade;
 import com.tournoipro.ConsulterEquipeController;
+import com.tournoipro.ConsulterTournoiController;
 import com.tournoipro.HelloApplication;
 import com.tournoipro.ModifierStadeController;
 import javafx.event.ActionEvent;
@@ -71,6 +72,17 @@ public class SwitchScenes {
         stage.setScene(scene);
         ConsulterEquipeController consulterEquipeController = fxmlLoader.getController();
         consulterEquipeController.setId(id);
+        stage.show();
+    }
+
+    public void SwitchToCheckTournoi(String fxml, Stage stage, int id) throws IOException {
+        this.stage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml+".fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle(fxml);
+        stage.setScene(scene);
+        ConsulterTournoiController consulterTournoiController = fxmlLoader.getController();
+        consulterTournoiController.checkTournoi(id);
         stage.show();
     }
 

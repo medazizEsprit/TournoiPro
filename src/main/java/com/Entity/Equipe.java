@@ -19,6 +19,11 @@ public class Equipe {
         this.Nom_Equipe = Nom_Equipe;
         this.Nbr_Joueur = Nbr_Joueur;
     }
+
+    public Equipe(int ID_Equipe) {
+        this.ID_Equipe = ID_Equipe;
+    }
+
     public Equipe(String Nom_Equipe, int Nbr_Joueur) {
         this.Nom_Equipe = Nom_Equipe;
         this.Nbr_Joueur = Nbr_Joueur;
