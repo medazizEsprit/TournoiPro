@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/ListView/PartieListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/ListView/PartieListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +93,8 @@
       <workItem from="1707770164480" duration="3344000" />
       <workItem from="1708195047525" duration="369000" />
       <workItem from="1708250514638" duration="422000" />
-      <workItem from="1708373787100" duration="4729000" />
+      <workItem from="1708373787100" duration="4801000" />
+      <workItem from="1708457064858" duration="2214000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />

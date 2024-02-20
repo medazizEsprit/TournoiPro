@@ -12,6 +12,7 @@ import com.Service.TournoiService;
 import com.Utils.UserMessages;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -147,6 +148,29 @@ public class ListPartiesController implements Initializable {
         Stade.setOnEditCommit(event ->{
             UserMessages.getInstance().Error("Erreur", "Impossible de modifier le stade", "Vous ne pouvez pas modifier le stade d'une partie");
         });
+    }
+
+    @FXML
+    public void deleteData(ActionEvent event){
+
+        TableView.TableViewSelectionModel<PartieListView> selectedModel = PartiesTV.getSelectionModel();
+        if (selectedModel.isEmpty()) {
+            System.out.println("You should select a row to delete !");
+            return;
+        }
+
+        ObservableList<PartieListView> selectedItems = selectedModel.getSelectedItems();
+
+
+        for (PartieListView partie : selectedItems) {
+            try {
+                PartieService.supprimer(partie.getId());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        PartiesTV.getItems().removeAll(selectedItems);
     }
 
     private void loadData() {
