@@ -90,4 +90,21 @@ public class TournoiService implements IService<Tournoi>{
         };
         return tournoiList;
     }
+
+    public List<Equipe> GetListEquipeByTournoi(int idTournoi) throws SQLException {
+        List<Equipe> equipeList = new ArrayList<>();
+        Equipe equipe;
+        try{
+            request = "SELECT e.* FROM equipe e,participation p WHERE p.ID_Equipe = e.ID_Equipe and p.ID_Tournoi = " + idTournoi;
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                equipe = new Equipe(resultSet.getInt("ID_Equipe"), resultSet.getString("Nom_Equipe"), resultSet.getInt("Nbr_Joueur"));
+                equipeList.add(equipe);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return equipeList;
+    }
 }

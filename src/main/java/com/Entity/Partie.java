@@ -21,6 +21,14 @@ public class Partie {
         this.stade = stade;
     }
 
+    public Partie(Date dateMatch, Equipe equipe1, Equipe equipe2, Tournoi tournoi, Stade stade) {
+        this.dateMatch = dateMatch;
+        this.equipe1 = equipe1;
+        this.equipe2 = equipe2;
+        this.tournoi = tournoi;
+        this.stade = stade;
+    }
+
     public Partie(int id, Date dateMatch, int score) {
         this.id = id;
         this.dateMatch = dateMatch;

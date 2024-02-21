@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Partie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/PartieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +98,8 @@
       <workItem from="1708195047525" duration="369000" />
       <workItem from="1708250514638" duration="422000" />
       <workItem from="1708373787100" duration="4801000" />
-      <workItem from="1708457064858" duration="2214000" />
+      <workItem from="1708457064858" duration="5910000" />
+      <workItem from="1708546796555" duration="2896000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
@@ -157,17 +162,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Interface Ajout Joueur" />
     <option name="LAST_COMMIT_MESSAGE" value="Interface Ajout Joueur" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/Service/PartieService.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TournoiPro$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1708188942392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

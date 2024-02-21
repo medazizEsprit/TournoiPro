@@ -23,7 +23,9 @@ public class PartieService implements IService<Partie>{
         int generatedID=0;
         try
         {
-            request ="INSERT INTO `partie`(`ID_Partie`, `Date_Partie`, `Score_Partie`, `Equipe1_ID`,`Equipe2_ID` ,`Tournoi_ID`,`ID_Stade`) " + "VALUES ('"+partie.getId()+"','"+partie.getDateMatch()+"','"+partie.getScore()+"','"+partie.getEquipe1()+"','"+partie.getEquipe2()+"','"+partie.getTournoi()+"','"+partie.getStade()+"')";
+            Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
+            cal.setTime(partie.getDateMatch());
+            request ="INSERT INTO `partie`(`Date_Partie`, `Score_Partie`, `Equipe1_ID`,`Equipe2_ID` ,`Tournoi_ID`,`ID_Stade`) " + "VALUES ('"+cal.get(Calendar.YEAR)+"-"+(cal.get(Calendar.MONTH)+1)+"-"+cal.get(Calendar.DAY_OF_MONTH)+"',"+partie.getScore()+","+partie.getEquipe1().getID_Equipe()+","+partie.getEquipe2().getID_Equipe()+","+partie.getTournoi().getID_Tournoi()+","+partie.getStade().getID_Stade()+")";
             generatedID = Datasource.getInstance().getCon().createStatement().executeUpdate(request,Statement.RETURN_GENERATED_KEYS);
         }
         catch (SQLException exception){
