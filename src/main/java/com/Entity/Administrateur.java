@@ -11,6 +11,10 @@ public class Administrateur extends Utilisateur{
         super(login,password, "ADM", firstName, lastName);
 
     }
+
+    public Administrateur() {
+    }
+
     public int getID_Admin() {
         return ID_Admin;
     }

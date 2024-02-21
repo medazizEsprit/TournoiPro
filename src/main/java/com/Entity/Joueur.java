@@ -8,6 +8,9 @@ public class Joueur extends Utilisateur {
     private String Position;
     private int Capitaine;
 
+    public Joueur() {
+    }
+
     @Override
     public String toString() {
         return "Joueur{" +

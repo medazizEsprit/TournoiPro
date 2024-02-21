@@ -1,7 +1,11 @@
 package com.tournoipro;
 
+import com.Entity.Joueur;
 import com.Entity.Utilisateur;
+import com.Service.AdministrateurService;
+import com.Service.JoueurService;
 import com.Service.UtilisateurService;
+import com.Utils.Session;
 import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.event.Event;
@@ -53,9 +57,23 @@ public class ConnexionController {
     public void Connect(Event event) throws SQLException {
         UtilisateurService utilisateurService = new UtilisateurService();
         Utilisateur utilisateur = utilisateurService.recuperer(login.getText(),password.getText());
+        JoueurService joueurService = new JoueurService();
+        AdministrateurService administrateurService = new AdministrateurService();
         if (utilisateur == null)
             UserMessages.getInstance().Error("Utilisateur introuvable","Coordonnées erronées","Veuillez vérifier vos coordonnées");
-        System.out.println(utilisateur);
+        else{
+            if ( utilisateur.getType().equals("JOU")){
+                Session.getInstance().setJoueurConnected(joueurService.recuperer(utilisateur.getID_Utilisateur()));
+                System.out.println(Session.getInstance().getJoueurConnected());
+                //accés à l'interface joueur
+            }
+            else {
+                Session.getInstance().setAdministrateurConnected(administrateurService.recuperer(utilisateur.getID_Utilisateur()));
+                //accés à l'interface administrateur
+                System.out.println(Session.getInstance().getAdministrateurConnected());
+            }
+        }
+
     }
 
     @FXML
