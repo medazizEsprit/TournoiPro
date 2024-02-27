@@ -5,17 +5,32 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="328.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.AjouterStade">
-   <children>
-      <Button id="BtnAjout" fx:id="BtnAjout" layoutX="365.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnAjouter" text="Ajouter" />
-      <Label layoutX="72.0" layoutY="53.0" text="Nom du stade" />
-      <Label layoutX="72.0" layoutY="131.0" text="Lieu" />
-      <Label layoutX="72.0" layoutY="212.0" text="Nombre de participants" />
-      <TextField fx:id="NomST" layoutX="71.0" layoutY="78.0" onKeyPressed="#VerifyNomST" />
-      <Label fx:id="nomSTError" layoutX="73.0" layoutY="110.0" prefHeight="18.0" textFill="RED" />
-      <TextField fx:id="Lieu" layoutX="71.0" layoutY="157.0" onKeyPressed="#VerifyLieu" />
-      <Label fx:id="lieuError" layoutX="73.0" layoutY="190.0" prefHeight="18.0" textFill="RED" />
-      <TextField fx:id="NbPart" layoutX="71.0" layoutY="237.0" onKeyPressed="#VerifyNbPart" />
-      <Label fx:id="nbPartError" layoutX="73.0" layoutY="270.0" prefHeight="18.0" textFill="RED" />
-   </children>
-</AnchorPane>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.AjouterStade">
+   <top>
+      <AnchorPane prefHeight="14.0" prefWidth="600.0" style="-fx-background-color: #2e4057;" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="167.0" layoutY="37.0" text="Ajouter un stade" textFill="#2e4057">
+               <font>
+                  <Font name="Arial Bold" size="29.0" />
+               </font>
+            </Label>
+            <TextField fx:id="NomST" layoutX="171.0" layoutY="127.0" onKeyPressed="#VerifyNomST" prefHeight="26.0" prefWidth="258.0" promptText="Nom du stade" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="Lieu" layoutX="171.0" layoutY="187.0" onKeyPressed="#VerifyLieu" prefHeight="26.0" prefWidth="258.0" promptText="Lieu" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="NbPart" layoutX="171.0" layoutY="247.0" onKeyPressed="#VerifyNbPart" prefHeight="26.0" prefWidth="258.0" promptText="Nombre de participants" style="-fx-background-color: transparent; -fx-border-color: #2e4057; -fx-border-width: 0px 0px 2px 0px;" />
+            <Label fx:id="nomSTError" layoutX="171.0" layoutY="157.0" prefHeight="18.0" textFill="RED" />
+            <Label fx:id="lieuError" layoutX="171.0" layoutY="217.0" prefHeight="18.0" textFill="RED" />
+            <Label fx:id="nbPartError" layoutX="171.0" layoutY="277.0" prefHeight="18.0" textFill="RED" />
+            <Button id="BtnAjout" fx:id="BtnAjout" layoutX="260.0" layoutY="318.0" mnemonicParsing="false" onAction="#BtnAjouter" prefHeight="37.0" prefWidth="93.0" style="-fx-background-color: #2e4057;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

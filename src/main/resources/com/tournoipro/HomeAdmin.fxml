@@ -12,10 +12,10 @@
             <Font name="Montserrat Regular" size="26.0" />
          </font>
       </Label>
-      <Button layoutX="95.0" layoutY="152.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Gérer les stades" />
-      <Button layoutX="369.0" layoutY="152.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Gérer les équipes" />
-      <Button layoutX="95.0" layoutY="223.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Gérer les parties" />
-      <Button layoutX="369.0" layoutY="223.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Gérer les joueurs" />
-      <Button layoutX="232.0" layoutY="294.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Gérer les tournois" />
+      <Button layoutX="95.0" layoutY="152.0" mnemonicParsing="false" onAction="#GoStades" prefHeight="41.0" prefWidth="137.0" text="Gérer les stades" />
+      <Button layoutX="369.0" layoutY="152.0" mnemonicParsing="false" onAction="#GoEquipes" prefHeight="41.0" prefWidth="137.0" text="Gérer les équipes" />
+      <Button layoutX="95.0" layoutY="223.0" mnemonicParsing="false" onAction="#GoParties" prefHeight="41.0" prefWidth="137.0" text="Gérer les parties" />
+      <Button layoutX="369.0" layoutY="223.0" mnemonicParsing="false" onAction="#GoJoueurs" prefHeight="41.0" prefWidth="137.0" text="Gérer les joueurs" />
+      <Button layoutX="232.0" layoutY="294.0" mnemonicParsing="false" onAction="#GoTournois" prefHeight="41.0" prefWidth="137.0" text="Gérer les tournois" />
    </children>
 </AnchorPane>

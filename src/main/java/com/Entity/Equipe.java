@@ -24,6 +24,10 @@ public class Equipe {
         this.Nbr_Joueur = Nbr_Joueur;
     }
 
+    public Equipe(int ID_Equipe) {
+        this.ID_Equipe = ID_Equipe;
+    }
+
     public Equipe() {
     }
 

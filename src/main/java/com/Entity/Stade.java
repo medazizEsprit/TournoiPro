@@ -6,6 +6,10 @@ public class Stade {
     private int NumSpectateurs;
     private String Lieu;
 
+    public Stade(int ID_Stade) {
+        this.ID_Stade = ID_Stade;
+    }
+
     public int getID_Stade() {
         return ID_Stade;
     }
