@@ -3,19 +3,23 @@ package com.tournoipro;
 import com.Entity.Stade;
 import com.Service.StadeService;
 import com.Entity.*;
+import com.Utils.SwitchScenes;
 import javafx.beans.property.Property;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.w3c.dom.events.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -43,8 +47,7 @@ public class Liststade1Controller implements Initializable {
     private TableColumn<Stade,String> lieu;
     @FXML
     private TableColumn <Stade, Integer> Id;
-    @FXML
-    private TableColumn<Stade, Button> btn;
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             liststade = stadeService.getListStade();
@@ -87,6 +90,18 @@ public class Liststade1Controller implements Initializable {
 
 
             } );
+        Modifier.setOnAction((event)->
+                {
+                    Stade stade = TableStade.getSelectionModel().getSelectedItem();
+
+                    try {
+                        SwitchScenes.getInstance().SwitchToUpdateStade("ModifierStade",(Stage) (((Node) event.getSource()).getScene().getWindow()), stade.getID_Stade());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+
+                );
     }
 
 

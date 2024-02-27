@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Demandecontroller">
+   <children>
+      <Button fx:id="Accepter" disable="true" layoutX="97.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Accepter" />
+      <Button fx:id="Refuser" disable="true" layoutX="296.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Reffuser" />
+      <TableView fx:id="ListeDemande" layoutX="97.0" layoutY="56.0" prefHeight="275.0" prefWidth="406.0">
+        <columns>
+          <TableColumn fx:id="Equipe" prefWidth="196.800048828125" text="Equipe" />
+          <TableColumn fx:id="Tournoi" prefWidth="209.5999755859375" text="Tournoi" />
+        </columns>
+      </TableView>
+      <Label layoutX="201.0" layoutY="2.0" text="Liste Demande">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

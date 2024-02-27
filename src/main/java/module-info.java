@@ -11,8 +11,8 @@ module com.tournoipro {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires javax.mail;
     opens com.tournoipro;
     opens com.Entity;
-
     exports com.tournoipro;
 }
