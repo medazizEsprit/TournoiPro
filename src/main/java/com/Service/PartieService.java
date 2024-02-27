@@ -82,4 +82,5 @@ public class PartieService implements IService<Partie>{
         return partiesList;
     }
 
+
 }

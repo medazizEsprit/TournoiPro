@@ -7,6 +7,7 @@ public class Partie {
     private Date dateMatch;
     private int score;
     private Equipe equipe1;
+
     private Equipe equipe2;
     private Tournoi tournoi;
     private Stade stade;

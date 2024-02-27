@@ -18,4 +18,13 @@ public class HomeJoueurController {
                 throw new RuntimeException(e);
             }
     }
+
+    public void checkTournoi(ActionEvent event){
+        try {
+            //test en dur
+            SwitchScenes.getInstance().SwitchToCheckTournoi("consultTournoi", (Stage) (((Node) event.getSource()).getScene().getWindow()), 1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

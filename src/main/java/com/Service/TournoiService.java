@@ -107,4 +107,11 @@ public class TournoiService implements IService<Tournoi>{
         };
         return equipeList;
     }
+
+    private Tournoi getTournoi() throws SQLException {
+        Tournoi tournoi;
+        Utilisateur user = new Utilisateur(resultSet.getInt(6));
+        tournoi = new Tournoi(resultSet.getInt(1),resultSet.getString(2), resultSet.getDate(3), resultSet.getDate(4), resultSet.getInt(5), user);
+        return tournoi;
+    }
 }
