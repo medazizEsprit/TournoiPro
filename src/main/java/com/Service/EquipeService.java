@@ -55,6 +55,7 @@ public class EquipeService implements IService<Equipe> {
     @Override
     public Equipe recuperer(int idEquipe) throws SQLException {
         Equipe equipe = new Equipe();
+
         try {
             String request = "SELECT * FROM `equipe` WHERE `ID_Equipe`='" + idEquipe +"'";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);

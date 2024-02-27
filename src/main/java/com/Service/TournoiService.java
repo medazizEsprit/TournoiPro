@@ -57,16 +57,20 @@ public class TournoiService implements IService<Tournoi>{
     @Override
     public Tournoi recuperer(int idTournoi) throws SQLException {
         Tournoi tournoi = new Tournoi();
+
+        UtilisateurService utilisateurService= new UtilisateurService();
+
         try {
             String request = "SELECT * FROM `tournoi` WHERE `ID_Tournoi`='" + idTournoi +"'";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
-                tournoi.setID_Tournoi(resultSet.getInt("ID_Tournoi"));
-                tournoi.setNom_Tournoi(resultSet.getString("Nom_Tournoi"));
-                tournoi.setDate_Debut(resultSet.getDate("Date_Debut"));
-                tournoi.setDate_Fin(resultSet.getDate("Date_Fin"));
-                tournoi.setNbr_Equipe(resultSet.getInt("Nbr_Equipe"));
-                tournoi.setCreateur(new Utilisateur(resultSet.getInt("ID_Createur")));
+
+                tournoi.setID_Tournoi(resultSet.getInt(1));
+                tournoi.setNom_Tournoi(resultSet.getString(2));
+                tournoi.setDate_Debut(resultSet.getDate(3));
+                tournoi.setDate_Fin(resultSet.getDate(4));
+                tournoi.setNbr_Equipe(resultSet.getInt(5));
+                tournoi.setCreateur(utilisateurService.recuperer(resultSet.getInt(6)));
             }
         } catch (SQLException exception) {
             System.out.println(exception);

@@ -108,6 +108,11 @@
           <artifactId>jetty-webapp</artifactId>
           <version>9.4.46.v20220331</version>
       </dependency>
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.0</version>
+    </dependency>
   </dependencies>
 
   <build>
