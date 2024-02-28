@@ -60,7 +60,7 @@ public class DemandeJoueurEquipeService {
         Joueur joueur;
 
         try{
-            request = "SELECT * FROM utilisateur,joueur,dmnjreq WHERE joueur.ID_Joueur = utilisateur.ID_Utilisateur AND joueur.ID_Joueur =  dmnjreq.ID_Joueur AND dmnjreq.ID_Equipe = '"+idEquipe+"';";
+            request = "SELECT * FROM utilisateur,joueur,dmnjreq WHERE joueur.ID_Joueur = utilisateur.ID_Utilisateur AND joueur.ID_Joueur =  dmnjreq.ID_Joueur AND dmnjreq.ID_Equipe = '"+idEquipe+"' AND joueur.ID_Equipe IS NULL;";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
                 joueur = getJoueurWithouTeam();
@@ -79,9 +79,9 @@ public class DemandeJoueurEquipeService {
         return joueur;
     }
 
-    public void affecterJoueurEquipe(int idEquipe,int idJoueur){
+    public void affecterJoueurEquipe(int idEquipe,int idJoueur, String position){
         try{
-            request = "UPDATE joueur,utilisateur SET ID_Equipe ='"+idEquipe+"' WHERE ID_Joueur ='"+idJoueur+"'";
+            request = "UPDATE joueur,utilisateur SET ID_Equipe ='"+idEquipe+"' , Position ='"+position+"' WHERE ID_Joueur ='"+idJoueur+"'";
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){

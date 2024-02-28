@@ -98,7 +98,7 @@ public class JoueurDemandeRejointController implements Initializable {
                     for (Equipe equipe : selectedItems)
                     {
                         // demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(),Session.getJoueurConnected().getID_Joueur());
-                        if (!demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(), 2, pos))
+                        if (!demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(), 4, pos))
                             UserMessages.getInstance().Error("Erreur", "Demande existante", "Vous avez déjà envoyé une demande à cette équipe");
                     }
                 }
