@@ -49,7 +49,7 @@ public class ConsulterTournoiController implements Initializable {
     public void checkTournoi(int id) {
         this.id = id;
         try {
-            List<Partie> lstPartie = partieService.getListPartie();
+            List<Partie> lstPartie = partieService.getListParties();
             Joueur joueur = joueurService.recuperer(id);
             for (Partie par : lstPartie){
                 if (par.getEquipe1().getID_Equipe() == joueur.getEquipe().getID_Equipe() || par.getEquipe2().getID_Equipe() == joueur.getEquipe().getID_Equipe()){
