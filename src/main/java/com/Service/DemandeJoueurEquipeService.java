@@ -17,16 +17,21 @@ public class DemandeJoueurEquipeService {
     String request;
     ResultSet resultSet;
 
-    public void postulerEquipe(int idJoueur, int idEquipe){
+    public boolean postulerEquipe(int idEquipe , int idJoueur,String Position){
+        boolean verif = true;
         try
         {
-            request ="INSERT INTO `DMNJREQ`(`ID_Joueur`,`ID_Equipe`) " +
-                    "VALUES ('"+idJoueur+"','"+idEquipe+"')";
+            request ="INSERT INTO `DMNJREQ`(`ID_Joueur`,`ID_Equipe`,`Position`) " +
+                    "VALUES ('"+idJoueur+"','"+idEquipe+"','"+Position+"')";
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){
+            //1062 => Duplicated key error code MYSQL
+            if(exception.getErrorCode() == 1062)
+                verif =false;
             System.out.println(exception);
         };
+        return verif;
     }
 
 
@@ -55,7 +60,7 @@ public class DemandeJoueurEquipeService {
         Joueur joueur;
 
         try{
-            request = "SELECT * FROM utilisateur,joueur,dmnjreq WHERE joueur.ID_Joueur = utilisateur.ID_Utilisateur AND joueur.ID_Joueur =  dmnjreq.ID_Joueur AND dmnjreq.ID_Equipe = '"+idEquipe+"';";
+            request = "SELECT * FROM utilisateur,joueur,dmnjreq WHERE joueur.ID_Joueur = utilisateur.ID_Utilisateur AND joueur.ID_Joueur =  dmnjreq.ID_Joueur AND dmnjreq.ID_Equipe = '"+idEquipe+"' AND joueur.ID_Equipe IS NULL;";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
                 joueur = getJoueurWithouTeam();
@@ -70,13 +75,13 @@ public class DemandeJoueurEquipeService {
     private Joueur getJoueurWithouTeam() throws SQLException {
         Joueur joueur;
         Equipe equipe = new Equipe(0,"Sans Equipe",0);
-        joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (11), resultSet.getInt(12));
+        joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (15), resultSet.getInt(12));
         return joueur;
     }
 
-    public void affecterJoueurEquipe(int idEquipe,int idJoueur){
+    public void affecterJoueurEquipe(int idEquipe,int idJoueur, String position){
         try{
-            request = "UPDATE joueur,utilisateur SET ID_Equipe ='"+idEquipe+"' WHERE ID_Joueur ='"+idJoueur+"'";
+            request = "UPDATE joueur,utilisateur SET ID_Equipe ='"+idEquipe+"' , Position ='"+position+"' WHERE ID_Joueur ='"+idJoueur+"'";
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){

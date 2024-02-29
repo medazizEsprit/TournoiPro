@@ -3,10 +3,20 @@ package com.Entity;
 public class DemandeJoueurEquipe {
     private int ID_Joueur;
     private int ID_Equipe;
+    private String Position;
 
-    public DemandeJoueurEquipe(int ID_Joueur, int ID_Equipe) {
+    public String getPosition() {
+        return Position;
+    }
+
+    public void setPosition(String position) {
+        Position = position;
+    }
+
+    public DemandeJoueurEquipe(int ID_Joueur, int ID_Equipe, String Position) {
         this.ID_Joueur = ID_Joueur;
         this.ID_Equipe = ID_Equipe;
+        this.Position = Position;
     }
 
     public int getID_Joueur() {

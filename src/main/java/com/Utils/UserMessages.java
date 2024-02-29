@@ -33,4 +33,14 @@ public class UserMessages {
         alert.setHeaderText(header);
         return alert.showAndWait();
     }
+    public boolean Confirmation (String title,String header,String content){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.setHeaderText(header);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK)
+            return true;
+        else return false;
+    }
 }

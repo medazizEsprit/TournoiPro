@@ -102,5 +102,22 @@ public class EquipeService implements IService<Equipe> {
         return equipeList;
     }
 
+    public List<Equipe> getListEquipeDisponibles() throws SQLException {
+        List<Equipe> equipeList = new ArrayList<>();
+        Equipe equipe;
+        try{
+            request = "SELECT * FROM equipe WHERE Nbr_Joueur < 25";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                equipe= new Equipe(resultSet.getInt(1),resultSet.getString(2),
+                        resultSet.getInt(3));
+                equipeList.add(equipe);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return equipeList;
+    }
 }
 
