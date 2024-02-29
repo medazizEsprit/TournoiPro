@@ -4,6 +4,7 @@ import com.Entity.Equipe;
 import com.Service.DemandeJoueurEquipeService;
 import com.Service.EquipeService;
 import com.Utils.Session;
+import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -58,6 +60,15 @@ public class JoueurDemandeRejointController implements Initializable {
         SortedList<Equipe> sortedList = new SortedList<>(filteredData);
         sortedList.comparatorProperty().bind(equipeTV.comparatorProperty());
         equipeTV.setItems(sortedList);
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeJoueur", new HomeJoueurController(), "HomeStyle");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

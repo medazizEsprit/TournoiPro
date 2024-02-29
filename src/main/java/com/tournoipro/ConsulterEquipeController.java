@@ -79,6 +79,7 @@ public class ConsulterEquipeController implements Initializable {
     }
 
 
+
     private void loadData() {
         // refreshTable();
         nomJoueurs.setCellValueFactory(new PropertyValueFactory<>("LastName"));
@@ -86,7 +87,7 @@ public class ConsulterEquipeController implements Initializable {
         position.setCellValueFactory(new PropertyValueFactory<>("Position"));
         nbrButs.setCellValueFactory(new PropertyValueFactory<>("Nbr_Buts"));
         try {
-            IsCaptaine = joueurService.IsCaptain(Session.getJoueurConnected().getID_Joueur());
+            IsCaptaine = joueurService.IsCaptain(Session.getJoueurConnected());
             BtnConsultTournoi.setVisible(IsCaptaine);
             BtnRejoindreT.setVisible(IsCaptaine);
         } catch (SQLException e) {
@@ -96,12 +97,16 @@ public class ConsulterEquipeController implements Initializable {
 
     @FXML
     void Cancel(ActionEvent event) throws IOException {
-        SwitchScenes.getInstance().Switch("homeJoueur", (Stage) (((Node) event.getSource()).getScene().getWindow()));
+        SwitchScenes.getInstance().Switch("homeJoueur", new HomeJoueurController(), "HomeStyle");
     }
 
     @FXML
     void ConulterTournoi(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().SwitchToCheckTournoi("consultTournoi", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class HomeJoueurController implements Initializable {
 
+
     private Boolean HasTeam;
     private Boolean IsCaptain;
     private JoueurService joueurService = new JoueurService();
@@ -27,36 +28,49 @@ public class HomeJoueurController implements Initializable {
     private Button BtnIntegrerTeam;
 
     @FXML
+    private Button btnConsult;
+
+    @FXML
+    void IntegrerEquipe(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("JoueurDemandeRejoint");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @FXML
     void AjouterEquipe(ActionEvent event) {
-        System.out.println(Session.getJoueurConnected());
+        try {
+            SwitchScenes.getInstance().Switch("ajoutEquipe");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     public void checkEquipe(ActionEvent event) {
             try {
-                //test en dur
-                SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected().getID_Joueur());
+                SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
     }
 
     public void checkTournoi(ActionEvent event){
-        try {
-            //test en dur
-            SwitchScenes.getInstance().SwitchToCheckTournoi("consultTournoi", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected().getID_Joueur());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            HasTeam = joueurService.HasTeam(Session.getJoueurConnected().getID_Joueur());
-            IsCaptain = joueurService.IsCaptain(Session.getJoueurConnected().getID_Joueur());
+            System.out.println(Session.getInstance().getJoueurConnected());
+            HasTeam = joueurService.HasTeam(Session.getInstance().getJoueurConnected());
+            IsCaptain = joueurService.IsCaptain(Session.getInstance().getJoueurConnected());
             BtnAjoutTeam.setVisible(!HasTeam);
             BtnIntegrerTeam.setVisible(!HasTeam);
+            btnConsult.setVisible(HasTeam);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

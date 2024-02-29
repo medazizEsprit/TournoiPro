@@ -89,6 +89,22 @@ public class JoueurService implements IService<Joueur> {
         };
         return joueur;
     }
+
+    public Joueur recuperer(String login) throws SQLException {
+        Joueur joueur = null;
+        try{
+            request = "SELECT * FROM utilisateur,joueur,equipe WHERE ID_Joueur = ID_Utilisateur AND Login ='"+login+"' AND (equipe.ID_Equipe = joueur.ID_Equipe OR joueur.ID_Equipe;";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                joueur = getJoueur();
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return joueur;
+    }
+
     public List<Joueur> getListJoueur() throws SQLException {
         List<Joueur> JoueurList = new ArrayList<>();
         Joueur joueur;

@@ -1,19 +1,24 @@
 package com.tournoipro;
 
 import com.Entity.Joueur;
+import com.Entity.Participation;
 import com.Entity.Partie;
 import com.Entity.Tournoi;
-import com.Service.JoueurService;
-import com.Service.PartieService;
-import com.Service.TournoiService;
+import com.Service.*;
+import com.Utils.Session;
+import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
@@ -35,6 +40,8 @@ public class ConsulterTournoiController implements Initializable {
     private PartieService partieService = new PartieService();
     private TournoiService TournoiService = new TournoiService();
     private JoueurService joueurService = new JoueurService();
+    private EquipeService equipeService = new EquipeService();
+    private ParticipationService participationService = new ParticipationService();
     private ObservableList<Tournoi> TournoiList = FXCollections.observableArrayList();
 
 
@@ -49,18 +56,25 @@ public class ConsulterTournoiController implements Initializable {
     public void checkTournoi(int id) {
         this.id = id;
         try {
-            List<Partie> lstPartie = partieService.getListParties();
+            List<Participation> lstParticipation = participationService.RecupererParticipations(id);
             Joueur joueur = joueurService.recuperer(id);
-            for (Partie par : lstPartie){
-                if (par.getEquipe1().getID_Equipe() == joueur.getEquipe().getID_Equipe() || par.getEquipe2().getID_Equipe() == joueur.getEquipe().getID_Equipe()){
-                    Tournoi tournoi = TournoiService.recuperer(par.getTournoi().getID_Tournoi());
-                    TournoiList.add(tournoi);
-                }
+            for (Participation par : lstParticipation){
+                Tournoi tournoi = TournoiService.recuperer(par.getTournoi().getID_Tournoi());
+                TournoiList.add(tournoi);
             }
             lstTournoiJoueur.setItems(TournoiList);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

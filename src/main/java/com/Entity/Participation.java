@@ -4,6 +4,14 @@ public class Participation {
     private Tournoi Tournoi;
     private Equipe Equipe;
 
+    public Participation(int idTournoi, int idEquipe) {
+        Tournoi = new Tournoi(idTournoi);
+        Equipe = new Equipe(idEquipe);
+    }
+
+    public Participation() {
+    }
+
     public Tournoi getTournoi() {
         return Tournoi;
     }

@@ -5,8 +5,10 @@ import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.event.Event;
 import javafx.fxml.*;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -49,6 +51,11 @@ public class InscriptionController {
             if(!joueurService.VerifLogin(login.getText())){
                 Joueur joueur = new Joueur(login.getText(),password.getText(),firstname.getText(),lastname.getText(),0,0,"",0);
                 joueurService.ajout(joueur);
+                try {
+                    SwitchScenes.getInstance().Switch("connexion");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }else UserMessages.getInstance().Error("Erreur inscription","Identifiant existant","l'identifiant désiré existe déjà !!");
 
         }

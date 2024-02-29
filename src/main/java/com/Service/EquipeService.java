@@ -70,6 +70,20 @@ public class EquipeService implements IService<Equipe> {
         return equipe;
     }
 
+    public int getEquipeByJoueur(int idJoueur) throws SQLException {
+        int idEquipe = 0;
+        try {
+            String request = "SELECT * FROM `joueur` WHERE `ID_Joueur`='" + idJoueur +"'";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                idEquipe = resultSet.getInt("ID_Equipe");
+            }
+        } catch (SQLException exception) {
+            System.out.println(exception);
+        }
+        return idEquipe;
+    }
+
     public boolean existName(String nom) throws  SQLException{
         boolean exist = false;
         try {

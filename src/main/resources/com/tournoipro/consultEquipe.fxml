@@ -28,8 +28,20 @@
             <TableColumn fx:id="nbrButs" prefWidth="136.0001220703125" style="-fx-alignment: center;" text="Nombre de Buts" />
         </columns>
       </TableView>
-      <Button fx:id="BtnConsultTournoi" layoutX="15.0" layoutY="188.0" mnemonicParsing="false" onAction="#ConulterTournoi" text="Consulter vos tournois" />
-      <Button fx:id="BtnRejoindreT" layoutX="17.0" layoutY="241.0" mnemonicParsing="false" onAction="#RejoindreTournoi" text="Rejoindre un tournois" />
-      <Button fx:id="Retour" layoutX="56.0" layoutY="294.0" mnemonicParsing="false" onAction="#Cancel" text="Retour" />
+       <Button fx:id="BtnConsultTournoi" layoutX="15.0" layoutY="188.0" mnemonicParsing="false" onAction="#ConulterTournoi" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Consulter vos tournois" textFill="WHITE">
+           <font>
+               <Font name="System Bold" size="10.0" />
+           </font>
+       </Button>
+       <Button fx:id="BtnRejoindreT" layoutX="15.0" layoutY="241.0" mnemonicParsing="false" onAction="#RejoindreTournoi" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Rejoindre un tournois" textFill="WHITE">
+           <font>
+               <Font name="System Bold" size="10.0" />
+           </font>
+       </Button>
+       <Button fx:id="Retour" layoutX="14.0" layoutY="291.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Retour" textFill="WHITE">
+           <font>
+               <Font name="System Bold" size="10.0" />
+           </font>
+       </Button>
    </children>
 </AnchorPane>

@@ -23,12 +23,21 @@
                 <Font name="Comic Sans MS" size="30.0" />
             </font>
         </Text>
-      <Button layoutX="298.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#onClick" prefHeight="31.0" prefWidth="104.0" text="Rejoindre" />
-      <TextField fx:id="filter" layoutX="229.0" layoutY="82.0" prefHeight="26.0" prefWidth="356.0" />
+        <Button layoutX="341.0" layoutY="451.0" mnemonicParsing="false" onMouseClicked="#onClick" prefHeight="37.0" prefWidth="93.0" style="-fx-background-color: #2e4057;" text="Rejoindre" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <TextField fx:id="filter" layoutX="229.0" layoutY="82.0" prefHeight="26.0" prefWidth="356.0" />
       <Text layoutX="114.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtrer par nom">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Text>
+      <Button fx:id="Retour" layoutX="227.0" layoutY="451.0" mnemonicParsing="false" onAction="#Cancel" onMouseClicked="#onClick" prefHeight="37.0" prefWidth="93.0" style="-fx-background-color: #2e4057;" text="Retour" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

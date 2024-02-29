@@ -34,8 +34,7 @@ public class SwitchScenes {
         stage.show();
     }
 
-    public void Switch(String fxml, Stage stage, Object object, String cssFile) throws IOException {
-        this.stage = stage;
+    public void Switch(String fxml, Object object, String cssFile) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml+".fxml"));
         String css = object.getClass().getResource(cssFile + ".css").toExternalForm();
         Scene scene = new Scene(fxmlLoader.load());

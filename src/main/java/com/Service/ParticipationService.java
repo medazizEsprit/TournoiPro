@@ -73,6 +73,22 @@ public class ParticipationService{
         return tournois;
     }
 
+    public List<Participation> RecupererParticipations(int idJoueur) throws SQLException {
+        List<Participation> participations = new ArrayList<>();
+        try{
+            request = "SELECT * FROM `participation` WHERE ID_Equipe = (SELECT ID_Equipe FROM joueur WHERE ID_Joueur = "+idJoueur+");";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                Participation participation = new Participation(resultSet.getInt("ID_Tournoi"),resultSet.getInt("ID_Equipe"));
+                participations.add(participation);
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return participations;
+    }
+
     public void Annuler(Participation participation) throws SQLException {
         try
         {

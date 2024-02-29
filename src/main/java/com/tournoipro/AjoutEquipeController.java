@@ -2,11 +2,14 @@ package com.tournoipro;
 
 import com.Entity.Equipe;
 import com.Service.EquipeService;
+import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class AjoutEquipeController {
@@ -18,6 +21,8 @@ public class AjoutEquipeController {
     private Label nbrJoueursErreur;
     @FXML
     private TextField nbrJoueurs;
+    @FXML
+    private Button Retour;
 
     private boolean nomEquipeValid;
     private boolean nbrJoueursValid;
@@ -33,6 +38,15 @@ public class AjoutEquipeController {
                 nomEquipeValid = true;
             }
         });
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeJoueur", new HomeJoueurController(), "HomeStyle" );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

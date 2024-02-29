@@ -10,8 +10,10 @@ import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -36,20 +38,14 @@ public class ConnexionController {
     public void VerifyLogin(KeyEvent event) {
         // Add a listener to the text field to check the length of input
         login.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.length() > 8) {
-                loginValid = false;
-                loginError.setText("Identifiant ne doit pas dépasser 8 caractères");
-            }
-            else {
-                if (!newValue.matches("^[a-zA-Z0-9_]*$")){
+                /*if (!newValue.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")){
                     loginValid = false;
-                    loginError.setText("Identifiant doit contenir seuelement des caractères alphanumériques");
+                    loginError.setText("Adresse mail invalide");
                 }
                 else {
                     loginError.setText("");
                     loginValid = true;
-                }
-            }
+                }*/
         });
     }
 
@@ -63,15 +59,15 @@ public class ConnexionController {
             UserMessages.getInstance().Error("Utilisateur introuvable","Coordonnées erronées","Veuillez vérifier vos coordonnées");
         else{
             if ( utilisateur.getType().equals("JOU")){
-                Session.getInstance().setJoueurConnected(joueurService.recuperer(utilisateur.getID_Utilisateur()));
-                System.out.println(Session.getInstance().getJoueurConnected());
-                SwitchScenes.getInstance().Switch("homeJoueur");
+                Session.getInstance().setJoueurConnected(utilisateur.getID_Utilisateur());
+                Joueur j = joueurService.recuperer(utilisateur.getID_Utilisateur());
+                SwitchScenes.getInstance().Switch("HomeJoueur", new HomeJoueurController(), "HomeStyle" );
             }
             else {
-                Session.getInstance().setAdministrateurConnected(administrateurService.recuperer(utilisateur.getID_Utilisateur()));
+                Session.getInstance().setAdministrateurConnected(utilisateur.getID_Utilisateur());
                 //accés à l'interface administrateur
                 System.out.println(Session.getInstance().getAdministrateurConnected());
-                SwitchScenes.getInstance().Switch("homeAdmin");
+                SwitchScenes.getInstance().Switch("HomeAdmin",new HomeAdminController(), "HomeStyle");
             }
         }
 
