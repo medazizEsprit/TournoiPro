@@ -5,10 +5,7 @@ package com.Service;
 import com.Entity.*;
 import com.Utils.Datasource;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,10 +51,48 @@ public class TournoiService implements IService<Tournoi>{
         }
     }
 
-    @Override
+
+//    public List<Tournoi> getListTournoi() throws SQLException {
+//        List<Tournoi> tournoiList = new ArrayList<>();
+//        Tournoi tournoi;
+//        try {
+//            request = "SELECT * FROM tournoi";
+//            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+//            while (resultSet.next()) {
+//                // Extraire les données du ResultSet
+//                int ID_Tournoi = resultSet.getInt("ID_Tournoi");
+//                String nom_Tournoi = resultSet.getString("Nom_Tournoi");
+//                Date date_Debut = resultSet.getDate("Date_Debut");
+//                Date date_Fin = resultSet.getDate("Date_Fin");
+//                int nbr_Equipe = resultSet.getInt("Nbr_Equipe");
+//                int id_Createur = resultSet.getInt("ID_Createur");
+//
+//                // Créer un nouvel objet Tournoi avec les données extraites
+//                tournoi = new Tournoi(ID_Tournoi, nom_Tournoi, date_Debut, date_Fin, nbr_Equipe, new Utilisateur(id_Createur));
+//                tournoiList.add(tournoi);
+//            }
+//        } catch (SQLException exception) {
+//            System.out.println(exception);
+//        }
+//        return tournoiList;
+//    }
+
+
+@Override
     public Tournoi recuperer(int idTournoi) throws SQLException {
-        // Implémenter la logique pour récupérer un tournoi
-        return null;
+        Tournoi tournoi = null;
+        try{
+            request = "SELECT * FROM tournoi WHERE iD_Tournoi ='"+idTournoi+"' ";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                tournoi=new Tournoi(resultSet.getInt(1),resultSet.getString(2),resultSet.getDate(3),resultSet.getDate(4),resultSet.getInt(5));
+
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return tournoi;
     }
 
     public List<Tournoi> getListTournoi() throws SQLException {
@@ -67,7 +102,7 @@ public class TournoiService implements IService<Tournoi>{
             request = "SELECT * FROM tournoi";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
-                tournoi =new Tournoi(resultSet.getInt("ID_Tournoi"), resultSet.getString("Nom_Tournoi"),resultSet.getDate("Date_Debut"),resultSet.getDate("Date_Fin"),resultSet.getInt("Nbr_Equipe"),new Utilisateur(resultSet.getInt("ID_Createur")));
+                tournoi=new Tournoi(resultSet.getInt(1),resultSet.getString(2),resultSet.getDate(3),resultSet.getDate(4),resultSet.getInt(5));
                 tournoiList.add(tournoi);
             }
         }
@@ -76,4 +111,5 @@ public class TournoiService implements IService<Tournoi>{
         };
         return tournoiList;
     }
+
 }

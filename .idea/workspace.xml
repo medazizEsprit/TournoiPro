@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListeTournoiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ModifierTournoiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListTournoi.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ModifierTournoi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +62,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/medaz/OneDrive/Bureau/JavaFx Project/TournoiPro/fontawesomefx-8.2.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mhayd/Downloads/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,6 +96,15 @@
       <workItem from="1707252793384" duration="8417000" />
       <workItem from="1707336572155" duration="7885000" />
       <workItem from="1707424920387" duration="8594000" />
+      <workItem from="1708258441107" duration="13509000" />
+      <workItem from="1708461166512" duration="3739000" />
+      <workItem from="1708552627322" duration="2838000" />
+      <workItem from="1708629479018" duration="10896000" />
+      <workItem from="1708686081439" duration="2157000" />
+      <workItem from="1708716915094" duration="8114000" />
+      <workItem from="1708760781097" duration="3096000" />
+      <workItem from="1709063746758" duration="1501000" />
+      <workItem from="1709152157705" duration="7458000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
