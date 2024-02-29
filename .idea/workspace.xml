@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutEquipeTouroi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/DemandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/DemandeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutEquipeTouroi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutEquipeTouroi.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +124,7 @@
       <workItem from="1708768739892" duration="5996000" />
       <workItem from="1708876482110" duration="3409000" />
       <workItem from="1708979506786" duration="10868000" />
-      <workItem from="1709236559630" duration="5813000" />
+      <workItem from="1709236559630" duration="6520000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
