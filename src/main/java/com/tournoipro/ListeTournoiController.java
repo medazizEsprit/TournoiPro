@@ -13,14 +13,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -43,6 +50,8 @@ public class ListeTournoiController implements Initializable {
     private TableColumn<Tournoi, Date> Date_Fin;
     @FXML
     private TableColumn<Tournoi, Integer> Nbr_Equipe;
+    @FXML
+    private Button Ajouter;
 
     private TournoiService tournoiService = new TournoiService();
     private List<Tournoi> tournoiListe;
@@ -124,6 +133,27 @@ public class ListeTournoiController implements Initializable {
 
         tournoiTV.getItems().removeAll(selectedItems);
     }
+
+    @FXML
+    void handleAjouter(ActionEvent event) {
+        try {
+            // Charger l'interface FXML pour ajouter un tournoi existant
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AjouterTournoi.fxml"));
+            Parent root = loader.load();
+
+            // Créer une nouvelle scène avec la racine chargée
+            Scene scene = new Scene(root);
+
+            // Obtenir la scène actuelle à partir du bouton et changer sa racine
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Gérer les erreurs d'entrée/sortie si le chargement de l'interface échoue
+        }
+    }
+
 
     private void loadData() {
         refreshTable();
