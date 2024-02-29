@@ -63,6 +63,4 @@ public class ConsulterTournoiController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
-
-
 }

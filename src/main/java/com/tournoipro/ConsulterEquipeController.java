@@ -5,6 +5,7 @@ import com.Entity.Joueur;
 import com.Entity.Stade;
 import com.Service.JoueurService;
 import com.Service.StadeService;
+import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,7 +14,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -34,10 +37,14 @@ public class ConsulterEquipeController implements Initializable {
     private TableColumn<Joueur, String> nomJoueurs;
     @FXML
     private TableColumn<Joueur, String> prenomJoueur;
+    @FXML
+    private Text msgAlert;
 
     private ObservableList<Joueur> JoueursList = FXCollections.observableArrayList();
     private int id;
     private JoueurService joueurService= new JoueurService();
+    private SwitchScenes switchScenes = new SwitchScenes();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -62,12 +69,35 @@ public class ConsulterEquipeController implements Initializable {
         }
     }
 
-
     private void loadData() {
         // refreshTable();
         nomJoueurs.setCellValueFactory(new PropertyValueFactory<>("LastName"));
         prenomJoueur.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
         position.setCellValueFactory(new PropertyValueFactory<>("Position"));
         nbrButs.setCellValueFactory(new PropertyValueFactory<>("Nbr_Buts"));
+    }
+
+    @FXML
+    public void consultTournois() throws IOException {
+        for (Joueur joueur : JoueursList){
+            if (joueur.getCapitaine() == 1){
+                switchScenes.Switch("consultTournoi", new Stage());
+            }
+            else {
+                msgAlert.setText("Accès interdit : seulement les capitaines ");
+            }
+        }
+    }
+
+    @FXML
+    public void consultDemande() throws IOException {
+        for (Joueur joueur : JoueursList){
+            if (joueur.getCapitaine() == 1){
+                switchScenes.Switch("Demande", new Stage());
+            }
+            else {
+                msgAlert.setText("Accès interdit : seulement les capitaines ");
+            }
+        }
     }
 }
