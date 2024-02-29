@@ -20,11 +20,9 @@ import java.util.ResourceBundle;
         public void initialize(URL url, ResourceBundle resourceBundle) {
 
             WebEngine webEngine = Map.getEngine();
-            webEngine.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
-            Map.setPrefSize(800, 600);
-            Platform.runLater(() -> {
-                webEngine.load("https://maps.google.com");
-            });
+               // webEngine.load("https://maps.google.com?q=campnou spain");
+            webEngine.setJavaScriptEnabled(true);
+                webEngine.load("www.facebook.com");
 
 
         }

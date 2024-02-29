@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ecf5ff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Liststade1Controller">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #ecf5ff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Liststade1Controller">
 
     <children>
         <TableView fx:id="TableStade" editable="true" layoutX="14.0" layoutY="127.0" prefHeight="234.0" prefWidth="363.0" style="-fx-control-inner-background: #b3d9ff; -fx-table-cell-border-color: #99c2ff;">

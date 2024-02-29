@@ -7,20 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Demandecontroller">
-   <children>
-      <Button fx:id="Accepter" disable="true" layoutX="97.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Accepter" />
-      <Button fx:id="Refuser" disable="true" layoutX="296.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" text="Reffuser" />
-      <TableView fx:id="ListeDemande" layoutX="97.0" layoutY="56.0" prefHeight="275.0" prefWidth="406.0">
-        <columns>
-          <TableColumn fx:id="Equipe" prefWidth="196.800048828125" text="Equipe" />
-          <TableColumn fx:id="Tournoi" prefWidth="209.5999755859375" text="Tournoi" />
-        </columns>
-      </TableView>
-      <Label layoutX="201.0" layoutY="2.0" text="Liste Demande">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ecf5ff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Demandecontroller">
+    <children>
+        <Button fx:id="Accepter" disable="true" layoutX="97.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Accepter" />
+        <Button fx:id="Refuser" disable="true" layoutX="296.0" layoutY="331.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="206.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Reffuser" />
+        <TableView fx:id="ListeDemande" layoutX="97.0" layoutY="56.0" prefHeight="275.0" prefWidth="406.0" style="-fx-control-inner-background: #b3d9ff; -fx-table-cell-border-color: #99c2ff;">
+            <columns>
+                <TableColumn fx:id="Equipe" prefWidth="196.8" text="Equipe" />
+                <TableColumn fx:id="Tournoi" prefWidth="209.6" text="Tournoi" />
+            </columns>
+        </TableView>
+        <Label layoutX="201.0" layoutY="2.0" style="-fx-text-fill: #0066cc;" text="Liste Demande">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

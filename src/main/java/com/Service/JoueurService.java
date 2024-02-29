@@ -173,16 +173,35 @@ public class JoueurService implements IService<Joueur> {
 
     public Boolean IsCaptain(int idJoueur) throws SQLException {
         boolean exist = false;
-        try{
-            request = "SELECT * FROM joueur WHERE ID_Joueur ="+idJoueur+" AND Capitaine = 1";
+        try {
+            request = "SELECT * FROM joueur WHERE ID_Joueur =" + idJoueur + " AND Capitaine = 1";
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
-            if (resultSet.next()){
+            if (resultSet.next()) {
                 return true;
             }
-        }
-        catch (SQLException exception){
+        } catch (SQLException exception) {
             System.out.println(exception);
         };
         return exist;
+
+    }
+
+    public boolean IsCaptine(int Id) throws SQLException {
+        int i=0;
+        try{
+            request = "SELECT * FROM `joueur` WHERE `ID_Joueur`='"+Id+"' AND `Capitaine`='1';";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+
+            while (resultSet.next()) {
+                i++;
+            }
+
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+
+
+        };
+        return i==1;
     }
 }
