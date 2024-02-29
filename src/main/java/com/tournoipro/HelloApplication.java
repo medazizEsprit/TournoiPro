@@ -15,7 +15,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
         //SwitchScenes.getInstance().Switch("homeAdmin", stage, new HomeAdminController(), "HomeStyle");
-        SwitchScenes.getInstance().Switch("AjouterStade", stage);
+        SwitchScenes.getInstance().Switch("AjoutPartie", stage);
     }
     public static void main(String[] args) {
         launch();

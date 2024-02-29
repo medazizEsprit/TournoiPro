@@ -12,10 +12,9 @@
                 <Font name="Montserrat Regular" size="26.0" />
             </font>
         </Label>
-        <Button layoutX="95.0" layoutY="152.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Intégrer une équipe" />
-        <Button layoutX="369.0" layoutY="152.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Ajouter une équipe" />
-      <Button fx:id="btnConsult" layoutX="95.0" layoutY="227.0" mnemonicParsing="false" onAction="#checkEquipe" prefHeight="41.0" prefWidth="137.0" text="Consulter son équipe" />
-      <Button fx:id="btnConsultTournoi" layoutX="369.0" layoutY="227.0" mnemonicParsing="false" onAction="#checkTournoi" prefHeight="41.0" prefWidth="137.0" text="Consulter vos tournois" />
+        <Button fx:id="BtnIntegrerTeam" layoutX="95.0" layoutY="152.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="137.0" text="Intégrer une équipe" />
+        <Button fx:id="BtnAjoutTeam" layoutX="369.0" layoutY="152.0" mnemonicParsing="false" onAction="#AjouterEquipe" prefHeight="41.0" prefWidth="137.0" text="Ajouter une équipe" />
+      <Button fx:id="btnConsult" layoutX="232.0" layoutY="226.0" mnemonicParsing="false" onAction="#checkEquipe" prefHeight="41.0" prefWidth="137.0" text="Consulter son équipe" />
     </children>
 
 </AnchorPane>

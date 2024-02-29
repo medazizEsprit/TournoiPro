@@ -5,15 +5,22 @@ import com.Entity.Joueur;
 import com.Entity.Stade;
 import com.Service.JoueurService;
 import com.Service.StadeService;
+import com.Utils.Session;
+import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,11 +36,20 @@ public class ConsulterEquipeController implements Initializable {
     @FXML
     private Text nomEquipe;
     @FXML
+    private Button BtnConsultTournoi;
+
+    @FXML
+    private Button BtnRejoindreT;
+
+    @FXML
+    private Button Retour;
+    @FXML
     private TableColumn<Joueur, String> position;
     @FXML
     private TableColumn<Joueur, String> nomJoueurs;
     @FXML
     private TableColumn<Joueur, String> prenomJoueur;
+    private Boolean IsCaptaine;
 
     private ObservableList<Joueur> JoueursList = FXCollections.observableArrayList();
     private int id;
@@ -69,5 +85,27 @@ public class ConsulterEquipeController implements Initializable {
         prenomJoueur.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
         position.setCellValueFactory(new PropertyValueFactory<>("Position"));
         nbrButs.setCellValueFactory(new PropertyValueFactory<>("Nbr_Buts"));
+        try {
+            IsCaptaine = joueurService.IsCaptain(Session.getJoueurConnected().getID_Joueur());
+            BtnConsultTournoi.setVisible(IsCaptaine);
+            BtnRejoindreT.setVisible(IsCaptaine);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) throws IOException {
+        SwitchScenes.getInstance().Switch("homeJoueur", (Stage) (((Node) event.getSource()).getScene().getWindow()));
+    }
+
+    @FXML
+    void ConulterTournoi(ActionEvent event) {
+
+    }
+
+    @FXML
+    void RejoindreTournoi(ActionEvent event) {
+
     }
 }

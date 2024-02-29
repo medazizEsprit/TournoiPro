@@ -59,20 +59,14 @@ public class InscriptionController {
     public void VerifyLogin(KeyEvent event) {
         // Add a listener to the text field to check the length of input
         login.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue.length() > 8) {
-                loginValid = false;
-                loginError.setText("Identifiant ne doit pas dépasser 8 caractères");
-            }
-            else {
-                if (!newValue.matches("^[a-zA-Z0-9_]*$")){
+                if (!newValue.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$")){
                     loginValid = false;
-                    loginError.setText("Identifiant doit contenir seuelement des caractères alphanumériques");
+                    loginError.setText("Adresse mail invalide");
                 }
                 else {
                     loginError.setText("");
                     loginValid = true;
                 }
-            }
         });
     }
 

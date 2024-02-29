@@ -139,4 +139,34 @@ public class JoueurService implements IService<Joueur> {
         };
         return exist;
     }
+
+    public Boolean HasTeam(int idJoueur) throws SQLException {
+        boolean exist = false;
+        try{
+            request = "SELECT * FROM joueur WHERE ID_Joueur ="+idJoueur+" AND ID_Equipe IS NOT NULL";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                return true;
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return exist;
+    }
+
+    public Boolean IsCaptain(int idJoueur) throws SQLException {
+        boolean exist = false;
+        try{
+            request = "SELECT * FROM joueur WHERE ID_Joueur ="+idJoueur+" AND Capitaine = 1";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            if (resultSet.next()){
+                return true;
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return exist;
+    }
 }

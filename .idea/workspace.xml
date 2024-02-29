@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Demande.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Service/DemandeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/Demandecontroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Demande.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/EquipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/EquipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConnexionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConnexionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterTournoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterTournoiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeJoueurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeJoueurController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/InscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/InscriptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeJoueur.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeJoueur.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rayen/Desktop/PC/rayen/TournoiPro&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rayen/Downloads/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26/mysql-connector-java-8.0.26.jar&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -94,6 +89,8 @@
   </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.tournoipro.HelloApplication" />
       <module name="TournoiPro" />
       <extension name="coverage">
@@ -134,6 +131,9 @@
       <workItem from="1708457064858" duration="5910000" />
       <workItem from="1708546796555" duration="3313000" />
       <workItem from="1708979701419" duration="3073000" />
+      <workItem from="1709152772997" duration="1773000" />
+      <workItem from="1709223807483" duration="1492000" />
+      <workItem from="1709232911409" duration="2814000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />

@@ -54,7 +54,7 @@ public class ConnexionController {
     }
 
     @FXML
-    public void Connect(Event event) throws SQLException {
+    public void Connect(Event event) throws SQLException, IOException {
         UtilisateurService utilisateurService = new UtilisateurService();
         Utilisateur utilisateur = utilisateurService.recuperer(login.getText(),password.getText());
         JoueurService joueurService = new JoueurService();
@@ -65,12 +65,13 @@ public class ConnexionController {
             if ( utilisateur.getType().equals("JOU")){
                 Session.getInstance().setJoueurConnected(joueurService.recuperer(utilisateur.getID_Utilisateur()));
                 System.out.println(Session.getInstance().getJoueurConnected());
-                //accés à l'interface joueur
+                SwitchScenes.getInstance().Switch("homeJoueur");
             }
             else {
                 Session.getInstance().setAdministrateurConnected(administrateurService.recuperer(utilisateur.getID_Utilisateur()));
                 //accés à l'interface administrateur
                 System.out.println(Session.getInstance().getAdministrateurConnected());
+                SwitchScenes.getInstance().Switch("homeAdmin");
             }
         }
 
