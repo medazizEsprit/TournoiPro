@@ -4,42 +4,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #ecf5ff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Liststade1Controller">
-
+<AnchorPane prefHeight="472.0" prefWidth="700.0" style="-fx-background-color: #ecf5ff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.Liststade1Controller">
     <children>
-        <TableView fx:id="TableStade" editable="true" layoutX="14.0" layoutY="127.0" prefHeight="234.0" prefWidth="363.0" style="-fx-control-inner-background: #b3d9ff; -fx-table-cell-border-color: #99c2ff;">
+        <TableView fx:id="TableStade" editable="true" layoutX="18.0" layoutY="97.0" prefHeight="194.0" prefWidth="400.0" style="-fx-control-inner-background: #b3d9ff; -fx-table-cell-border-color: #99c2ff;">
             <columns>
-                <TableColumn fx:id="Id" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
-                <TableColumn fx:id="numspec" prefWidth="120.0" text="NumSpectateurs" />
-                <TableColumn fx:id="lieu" prefWidth="96.0" text="Lieu" />
+                <TableColumn fx:id="Id" prefWidth="67.99999809265137" style="-fx-alignment: center;" text="ID" />
+                <TableColumn fx:id="nom" prefWidth="93.59998321533203" style="-fx-alignment: center;" text="Nom" />
+                <TableColumn fx:id="numspec" prefWidth="99.20001220703125" style="-fx-alignment: center;" text="NumSpectateurs" />
+                <TableColumn fx:id="lieu" prefWidth="140.79998779296875" style="-fx-alignment: center;" text="Lieu" />
             </columns>
         </TableView>
 
-        <Label layoutX="227.0" layoutY="31.0" style="-fx-text-fill: #0066cc;" text="List Stade">
+        <Pane layoutY="57.0" prefHeight="3.0" prefWidth="426.0" style="-fx-background-color: black;" />
+
+        <Label layoutX="18.0" layoutY="14.0" text="List Stade">
             <font>
-                <Font size="34.0" />
+                <Font name="Comic Sans MS" size="30.0" />
             </font>
+            <style>
+                -fx-text-fill: #0066cc;
+            </style>
         </Label>
 
-        <!-- Bouton "Ajouter" -->
-        <Button fx:id="Ajouter" layoutX="423.0" layoutY="143.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="128.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Ajouter Stade">
-        </Button>
+        <Button fx:id="Ajouter" layoutX="151.0" layoutY="305.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Ajouter Stade" />
 
-        <!-- Bouton "Modifier" -->
-        <Button fx:id="Modifier" layoutX="423.0" layoutY="201.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="128.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Modifier Stade">
-        </Button>
+        <Button fx:id="Retour" layoutX="18.0" layoutY="305.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Retour" />
 
-        <!-- Bouton "Supprimer" -->
-        <Button fx:id="Supprimer" layoutX="423.0" layoutY="260.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="128.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Supprimer Stade">
-        </Button>
-
-        <TextField layoutX="14.0" layoutY="101.0" prefHeight="26.0" prefWidth="363.0" promptText="Nom" style="-fx-background-color: #ffffff; -fx-border-color: #b3d9ff; -fx-text-fill: #333333; -fx-border-radius: 5; -fx-background-radius: 5;">
-
-        </TextField>
+        <Button fx:id="Supprimer" layoutX="288.0" layoutY="305.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #007acc; -fx-text-fill: #ffffff; -fx-border-color: #005b99; -fx-border-radius: 5; -fx-background-radius: 5;" text="Supprimer Stade" />
     </children>
 </AnchorPane>

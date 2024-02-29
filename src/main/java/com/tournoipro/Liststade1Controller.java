@@ -32,8 +32,6 @@ public class Liststade1Controller implements Initializable {
     @FXML
     private Button Ajouter;
     @FXML
-    private Button Modifier;
-    @FXML
     private TableView<Stade> TableStade;
     @FXML
     private Button Supprimer;
@@ -47,6 +45,8 @@ public class Liststade1Controller implements Initializable {
     private TableColumn<Stade,String> lieu;
     @FXML
     private TableColumn <Stade, Integer> Id;
+    @FXML
+    private Button Retour;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -90,7 +90,7 @@ public class Liststade1Controller implements Initializable {
 
 
             } );
-        Modifier.setOnAction((event)->
+      /*  Modifier.setOnAction((event)->
                 {
                     Stade stade = TableStade.getSelectionModel().getSelectedItem();
 
@@ -101,7 +101,7 @@ public class Liststade1Controller implements Initializable {
                     }
                 }
 
-                );
+                );*/
     }
 
 

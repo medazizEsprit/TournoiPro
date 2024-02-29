@@ -135,7 +135,7 @@ public class Demandecontroller implements Initializable {
 
             );
             ListeDemande.setItems(stadeObservableList1);
-            sendEmail("walaamiri02@gmail.com");
+            sendEmail("bouazizions@gmail.com");
         });
         
     }
@@ -164,8 +164,8 @@ public class Demandecontroller implements Initializable {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinataire));
 
             // Paramétrage du sujet et du contenu du message
-            message.setSubject("désolé");
-            message.setText("Demande refusée ");
+            message.setSubject("félicitation");
+            message.setText("cher participant \n patati patata \n cordialement ");
 
             // Envoi du message
             Transport.send(message);
