@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Map.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("liststade1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 340);
         stage.setTitle("TournoiPro");
         stage.setScene(scene);

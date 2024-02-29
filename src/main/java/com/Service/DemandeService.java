@@ -85,4 +85,42 @@ public class DemandeService implements IService<Demande>{
         }
         return DemandeList;
     }
+
+    public boolean IsCaptine(int Id) throws SQLException {
+        int i=0;
+        try{
+            request = "SELECT * FROM `joueur` WHERE `ID_Joueur`='"+Id+"' AND `Capitaine`='1';";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+
+            while (resultSet.next()) {
+                i++;
+            }
+
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+
+
+        };
+        return i==1;
+
+    }
+    public boolean exsit(int id_tournoi, int id_equipe) {
+        int i=0;
+        try{
+            request = "SELECT * FROM `demande` WHERE `ID_Tournoi`='"+id_tournoi+"' AND `ID_Equipe`='"+id_equipe+"';";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+
+            while (resultSet.next()) {
+                i++;
+            }
+
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+
+
+        };
+        return i==1;
+    }
 }
