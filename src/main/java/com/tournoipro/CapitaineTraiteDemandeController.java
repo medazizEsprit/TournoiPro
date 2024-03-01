@@ -1,18 +1,24 @@
 package com.tournoipro;
 import com.Entity.Joueur;
 import com.Service.DemandeJoueurEquipeService;
+import com.Service.EquipeService;
 import com.Service.JoueurService;
 import com.Utils.Session;
+import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.*;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -34,6 +40,7 @@ public class CapitaineTraiteDemandeController implements Initializable {
     private Button accepter;
 
     private JoueurService joueurService = new JoueurService();
+    private EquipeService equipeService = new EquipeService();
     private DemandeJoueurEquipeService demandeJoueurEquipeService = new DemandeJoueurEquipeService();
     private List<Joueur> joueurList;
     private ObservableList<Joueur> JoueurList = FXCollections.observableArrayList();
@@ -45,6 +52,15 @@ public class CapitaineTraiteDemandeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadData();
 
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().SwitchToCheckTeam("consultEquipe", (Stage) (((Node) event.getSource()).getScene().getWindow()), Session.getJoueurConnected());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void loadData(){
         refreshTable();
@@ -71,7 +87,11 @@ public class CapitaineTraiteDemandeController implements Initializable {
         joueurTV.setItems(sortedList);
     }
     public void refreshTable(){
-        joueurList = demandeJoueurEquipeService.getListDemande(3);
+        try {
+            joueurList = demandeJoueurEquipeService.getListDemande(equipeService.getEquipeByJoueur(Session.getJoueurConnected()));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         for (Joueur j : joueurList){
             Joueur joueur = new Joueur(j.getID_Utilisateur(),j.getLogin(),j.getPassword(),j.getType(),j.getFirstName(),j.getLastName(),j.getEquipe(),j.getNbr_Buts(),j.getNbr_Assists(),j.getPosition(),j.getCapitaine());
             JoueurList.add(joueur);

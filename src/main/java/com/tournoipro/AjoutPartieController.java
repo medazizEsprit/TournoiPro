@@ -6,6 +6,7 @@ import com.Entity.Tournoi;
 import com.Service.PartieService;
 import com.Service.StadeService;
 import com.Service.TournoiService;
+import com.Utils.SwitchScenes;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.KeyEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Instant;
@@ -60,8 +62,22 @@ public class AjoutPartieController implements Initializable {
 
         try {
             partieService.ajout(new com.Entity.Partie(dateP, mapEquipe1.get(selectedIndexEquipe1), mapEquipe2.get(selectedIndexEquipe2), mapTournoi.get(selectedIndexTournoi), mapStade.get(selectedIndexStade)));
+            try {
+                SwitchScenes.getInstance().Switch("ListParties");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("ListParties");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -2,6 +2,7 @@ package com.tournoipro;
 
 import com.Entity.*;
 import com.Service.*;
+import com.Utils.Session;
 import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -77,7 +78,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
 
 
                     try {
-                        joueur1 = joueurService.recuperer(2);
+                        joueur1 = joueurService.recuperer(Session.getInstance().getJoueurConnected());
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
@@ -102,7 +103,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
 
 
                     try {
-                        joueur = joueurService.recuperer(2);
+                        joueur = joueurService.recuperer(Session.getInstance().getJoueurConnected());
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

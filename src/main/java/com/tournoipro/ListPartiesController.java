@@ -9,6 +9,7 @@ import com.Service.EquipeService;
 import com.Service.PartieService;
 import com.Service.StadeService;
 import com.Service.TournoiService;
+import com.Utils.SwitchScenes;
 import com.Utils.UserMessages;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +23,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.StringConverter;
 import javafx.util.converter.DateStringConverter;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -171,6 +173,24 @@ public class ListPartiesController implements Initializable {
         }
 
         PartiesTV.getItems().removeAll(selectedItems);
+    }
+
+    @FXML
+    void Ajouter(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("AjoutPartie");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin",new HomeAdminController(), "HomeStyle");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void loadData() {

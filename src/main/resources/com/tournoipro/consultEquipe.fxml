@@ -38,10 +38,15 @@
                <Font name="System Bold" size="10.0" />
            </font>
        </Button>
-       <Button fx:id="Retour" layoutX="14.0" layoutY="291.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Retour" textFill="WHITE">
+       <Button fx:id="Retour" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Retour" textFill="WHITE">
            <font>
                <Font name="System Bold" size="10.0" />
            </font>
        </Button>
+      <Button fx:id="BtnDemandes" layoutX="15.0" layoutY="289.0" mnemonicParsing="false" onAction="#GoTraiterDemandes" prefHeight="37.0" prefWidth="131.0" style="-fx-background-color: #2e4057;" text="Traiter demandes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.ListPartiesController">
     <children>
-        <TableView fx:id="PartiesTV" editable="true" layoutX="14.0" layoutY="88.0" prefHeight="257.0" prefWidth="573.0">
+        <TableView fx:id="PartiesTV" editable="true" layoutX="14.0" layoutY="88.0" prefHeight="227.0" prefWidth="573.0">
             <columns>
                 <TableColumn fx:id="DatePartie" prefWidth="101.0" style="-fx-alignment: center;" text="Date partie" />
                 <TableColumn fx:id="ScorePartie" prefWidth="81.0" style="-fx-alignment: center;" text="Score partie" />
@@ -21,12 +21,22 @@
             </columns>
         </TableView>
         <Pane layoutY="65.0" prefHeight="2.0" prefWidth="600.0" style="-fx-background-color: black;" />
-        <Text layoutX="35.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Equipes" wrappingWidth="285.45196533203125">
+        <Text layoutX="35.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Parties" wrappingWidth="285.45196533203125">
             <font>
                 <Font name="Comic Sans MS" size="30.0" />
             </font>
         </Text>
-        <Button fx:id="btnSupp" layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="26.0" prefWidth="104.0" text="Supprimer" textFill="#e41616" />
+        <Button fx:id="Retour" layoutX="142.0" layoutY="341.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #2e4057;" text="Retour" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnSupp" layoutX="434.0" layoutY="347.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="26.0" prefWidth="104.0" text="Supprimer" textFill="#e41616" />
+      <Button fx:id="BtnAjout" layoutX="245.0" layoutY="341.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="37.0" prefWidth="88.0" style="-fx-background-color: #2e4057;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
     </children>
 
 </AnchorPane>

@@ -108,8 +108,7 @@ public class JoueurDemandeRejointController implements Initializable {
                     ObservableList<Equipe> selectedItems = selectedModel.getSelectedItems();
                     for (Equipe equipe : selectedItems)
                     {
-                        // demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(),Session.getJoueurConnected().getID_Joueur());
-                        if (!demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(), 4, pos))
+                        if (!demandeJoueurEquipeService.postulerEquipe(equipe.getID_Equipe(), Session.getInstance().getJoueurConnected(), pos))
                             UserMessages.getInstance().Error("Erreur", "Demande existante", "Vous avez déjà envoyé une demande à cette équipe");
                     }
                 }

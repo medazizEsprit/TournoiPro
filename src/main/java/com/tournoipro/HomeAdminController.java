@@ -12,26 +12,60 @@ public class HomeAdminController {
 
     @FXML
     void GoEquipes(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().Switch("ListEquipe");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void GoJoueurs(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().Switch("ListJoueurAdmin");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void GoParties(ActionEvent event) throws IOException {
-        SwitchScenes.getInstance().Switch("ListParties", (Stage) (((Node) event.getSource()).getScene().getWindow()));
+        try {
+            SwitchScenes.getInstance().Switch("ListParties");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void GoStades(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().Switch("Liststade1");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void GoTournois(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("ListTournoi");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void GoTraiterEquipes(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("Demande");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void GoTraiterTournois(ActionEvent event) {
 
     }
 }

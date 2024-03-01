@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutEquipeTouroi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/DemandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/DemandeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/JoueurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/UtilisateurService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Demande.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Demande.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Liststade1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/Map.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeAdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/CapitaineTraiteDemande.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/CapitaineTraiteDemande.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListParties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListParties.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,6 +234,16 @@
           <properties class="java.lang.UnsupportedOperationException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

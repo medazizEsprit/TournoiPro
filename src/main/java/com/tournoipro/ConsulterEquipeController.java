@@ -37,6 +37,8 @@ public class ConsulterEquipeController implements Initializable {
     private Text nomEquipe;
     @FXML
     private Button BtnConsultTournoi;
+    @FXML
+    private Button BtnDemandes;
 
     @FXML
     private Button BtnRejoindreT;
@@ -78,7 +80,14 @@ public class ConsulterEquipeController implements Initializable {
         }
     }
 
-
+    @FXML
+    void GoTraiterDemandes(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("CapitaineTraiteDemande");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void loadData() {
         // refreshTable();
@@ -90,6 +99,7 @@ public class ConsulterEquipeController implements Initializable {
             IsCaptaine = joueurService.IsCaptain(Session.getJoueurConnected());
             BtnConsultTournoi.setVisible(IsCaptaine);
             BtnRejoindreT.setVisible(IsCaptaine);
+            BtnDemandes.setVisible(IsCaptaine);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -111,6 +121,10 @@ public class ConsulterEquipeController implements Initializable {
 
     @FXML
     void RejoindreTournoi(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().Switch("AjoutEquipeTouroi");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
