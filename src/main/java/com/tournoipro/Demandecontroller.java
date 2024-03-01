@@ -1,9 +1,11 @@
 package com.tournoipro;
 
-import com.Entity.*;
+import com.Entity.Demande;
+import com.Entity.Joueur;
+import com.Entity.Participation;
 import com.Service.DemandeService;
+import com.Service.JoueurService;
 import com.Service.ParticipationService;
-import com.Service.StadeService;
 import com.Service.TournoiService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,17 +15,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 public class Demandecontroller implements Initializable {
 
 
@@ -89,6 +88,15 @@ public class Demandecontroller implements Initializable {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            JoueurService joueurService= new JoueurService();
+            Joueur joueur3= new Joueur();
+            try {
+                joueur3= joueurService.recuperer2(demande.getEquipe().getID_Equipe());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            sendEmail(joueur3.getLogin(),"félicitation ","Votre demande au tournoi :"+demande.getTournoi().getNom_Tournoi()+"est acceptée");
+
 
             listdemande = demandeService.ListDemande();
             for (Demande elmet: listdemande) {
@@ -117,6 +125,15 @@ public class Demandecontroller implements Initializable {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            JoueurService joueurService1= new JoueurService();
+            Joueur joueur4= new Joueur();
+            try {
+                joueur4= joueurService1.recuperer2(demande.getEquipe().getID_Equipe());
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            sendEmail(joueur4.getLogin(),"Refus ","Votre demande au tournoi :"+demande.getTournoi().getNom_Tournoi()+"est refusée");
 
             listdemande = demandeService.ListDemande();
             for (Demande elmet: listdemande) {
@@ -135,11 +152,11 @@ public class Demandecontroller implements Initializable {
 
             );
             ListeDemande.setItems(stadeObservableList1);
-            sendEmail("bouazizions@gmail.com");
+
         });
         
     }
-    public static void sendEmail(String destinataire) {
+    public static void sendEmail(String destinataire,String Objet,String Main) {
         // Propriétés du serveur de messagerie
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
@@ -164,8 +181,8 @@ public class Demandecontroller implements Initializable {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(destinataire));
 
             // Paramétrage du sujet et du contenu du message
-            message.setSubject("félicitation");
-            message.setText("cher participant \n patati patata \n cordialement ");
+            message.setSubject(Objet);
+            message.setText(Main);
 
             // Envoi du message
             Transport.send(message);

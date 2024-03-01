@@ -89,6 +89,23 @@ public class JoueurService implements IService<Joueur> {
         };
         return joueur;
     }
+    public Joueur recuperer2(int idequipe) throws SQLException {
+        Joueur joueur = null;
+        try{
+            request = "SELECT * FROM utilisateur,joueur WHERE ID_Joueur = ID_Utilisateur AND ID_Equipe ='"+idequipe+"' AND Capitaine= 1;";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                 joueur = getJoueurWithoutTeam();
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return joueur;
+    }
+
+
+
     public List<Joueur> getListJoueur() throws SQLException {
         List<Joueur> JoueurList = new ArrayList<>();
         Joueur joueur;
@@ -145,5 +162,11 @@ public class JoueurService implements IService<Joueur> {
         };
         return i==1;
 
+    }
+    private Joueur getJoueurWithoutTeam() throws SQLException {
+        Joueur joueur;
+        Equipe equipe = new Equipe(0,"Sans Equipe",0);
+        joueur=new Joueur(resultSet.getInt(1),resultSet.getString (2), resultSet.getString (3), resultSet.getString (4), resultSet.getString (5), resultSet.getString (6), equipe, resultSet.getInt (9), resultSet.getInt (10), resultSet.getString (11), resultSet.getInt(12));
+        return joueur;
     }
 }

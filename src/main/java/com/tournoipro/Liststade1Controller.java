@@ -15,8 +15,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
@@ -49,6 +51,7 @@ public class Liststade1Controller implements Initializable {
     private Button Retour;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+          StadeService stadeService = new StadeService();
         try {
             liststade = stadeService.getListStade();
         } catch (SQLException e) {
@@ -65,7 +68,49 @@ public class Liststade1Controller implements Initializable {
 
         );
         TableStade.setItems(stadeObservableList);
+        nom.setCellFactory(TextFieldTableCell.forTableColumn());
+        nom.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setNomStade(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        lieu.setCellFactory(TextFieldTableCell.forTableColumn());
+        lieu.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setLieu(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        numspec.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<Integer>(){
+            @Override
+            public String toString(Integer object) {
+                return object == null ? "" : object.toString();
+            }
 
+            @Override
+            public Integer fromString(String string) {
+                return string.isEmpty() ? null : Integer.parseInt(string);
+            }
+        }));
+        numspec.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setNumSpectateurs(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
         Supprimer.setOnAction((event) -> {
 
 
