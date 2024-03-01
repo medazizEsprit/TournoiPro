@@ -9,8 +9,11 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -66,8 +69,6 @@ public class Liststade1Controller implements Initializable {
         );
         TableStade.setItems(stadeObservableList);
 
-        Supprimer.setOnAction((event) -> {
-
 
                 Stade stade = TableStade.getSelectionModel().getSelectedItem();
             try {
@@ -89,10 +90,10 @@ public class Liststade1Controller implements Initializable {
                 TableStade.setItems(stadeObservableList1);
 
 
-            } );
+
         Modifier.setOnAction((event)->
                 {
-                    Stade stade = TableStade.getSelectionModel().getSelectedItem();
+                    Stade stade1 = TableStade.getSelectionModel().getSelectedItem();
 
                     try {
                         SwitchScenes.getInstance().SwitchToUpdateStade("ModifierStade",(Stage) (((Node) event.getSource()).getScene().getWindow()), stade.getID_Stade());
@@ -103,6 +104,10 @@ public class Liststade1Controller implements Initializable {
 
                 );
     }
+    }
+
+
+
 
 
 }

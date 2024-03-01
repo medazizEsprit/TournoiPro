@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="Interface Ajout Joueur">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListeTournoiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ModifierTournoiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListTournoi.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ModifierTournoi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutEquipeTouroiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/AjoutPartieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/CapitaineTraiteDemandeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ConsulterEquipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HomeAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListPartiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/AjoutPartie.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/CapitaineTraiteDemande.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/CapitaineTraiteDemande.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/HomeAdmin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListParties.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListParties.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/consultEquipe.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Entity/Tournoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Service/TournoiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/Liststade1Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/tournoipro/ListStade.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

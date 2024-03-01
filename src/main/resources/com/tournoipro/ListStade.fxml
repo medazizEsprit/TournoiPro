@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tournoipro.ListStadeController">
-
    <children>
       <ListView fx:id="ListStade" layoutX="14.0" layoutY="95.0" prefHeight="210.0" prefWidth="223.0" />
       <Label layoutX="209.0" layoutY="14.0" prefHeight="59.0" prefWidth="223.0" text="Liste Stade">
@@ -51,6 +50,7 @@
       </Label>
       <Button fx:id="btnsup" layoutX="211.0" layoutY="335.0" mnemonicParsing="false" text="Supprimer" />
       <Button layoutX="379.0" layoutY="335.0" mnemonicParsing="false" onAction="#GoModifier" text="Modifier" />
+
       <Button layoutX="379.0" layoutY="335.0" mnemonicParsing="false" text="Modifier" />
       <ImageView fx:id="Map1" fitHeight="34.0" fitWidth="46.0" layoutX="252.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
          <image>
