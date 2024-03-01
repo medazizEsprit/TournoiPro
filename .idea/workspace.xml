@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2eb199a-b623-4645-974d-b1ec723734f6" name="Changes" comment="crud">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListeTournoiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tournoipro/ListeTournoiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,8 @@
       <workItem from="1708760781097" duration="3096000" />
       <workItem from="1709063746758" duration="1501000" />
       <workItem from="1709152157705" duration="7458000" />
-      <workItem from="1709248864621" duration="3916000" />
+      <workItem from="1709248864621" duration="4316000" />
+      <workItem from="1709279313162" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="Interface Ajout Joueur">
       <option name="closed" value="true" />
