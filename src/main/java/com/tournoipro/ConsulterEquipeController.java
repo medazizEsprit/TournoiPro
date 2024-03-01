@@ -8,8 +8,13 @@ import com.Service.StadeService;
 import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,6 +47,7 @@ public class ConsulterEquipeController implements Initializable {
 
     private ObservableList<Joueur> JoueursList = FXCollections.observableArrayList();
     private int id;
+    private int idEquipe;
     private JoueurService joueurService= new JoueurService();
     private SwitchScenes switchScenes = new SwitchScenes();
 
@@ -55,6 +61,7 @@ public class ConsulterEquipeController implements Initializable {
         this.id = id;
         try {
             Joueur joueur = joueurService.recuperer(id);
+            this.idEquipe = joueur.getEquipe().getID_Equipe();
             List<Joueur> lstJouers = joueurService.getListJoueur();
 
             nomEquipe.setText(joueur.getEquipe().getNom_Equipe());
@@ -100,4 +107,22 @@ public class ConsulterEquipeController implements Initializable {
             }
         }
     }
+
+    @FXML
+    public void checkStat(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Stat.fxml"));
+            Parent root = loader.load();
+            StatController statController = loader.getController();
+            statController.setIdEquipe(this.idEquipe);
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
