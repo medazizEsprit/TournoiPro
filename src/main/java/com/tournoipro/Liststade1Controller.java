@@ -104,12 +104,7 @@ public class Liststade1Controller implements Initializable {
 
                 );
     }
-    }
-
-
-
-
-
 }
+
 
 

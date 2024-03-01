@@ -6,6 +6,8 @@ import com.Utils.Session;
 import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -124,5 +126,15 @@ public class AjoutEquipeTouroiController  implements Initializable {
         );
 
 
+
+    }
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("consultEquipe");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -81,7 +81,7 @@ public class DemandeJoueurEquipeService {
 
     public void affecterJoueurEquipe(int idEquipe,int idJoueur, String position){
         try{
-            request = "UPDATE joueur,utilisateur SET ID_Equipe ='"+idEquipe+"' , Position ='"+position+"' WHERE ID_Joueur ='"+idJoueur+"'";
+            request = "UPDATE joueur SET ID_Equipe ="+idEquipe+" , Position ='"+position+"' WHERE ID_Joueur ="+idJoueur+"";
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         }
         catch (SQLException exception){

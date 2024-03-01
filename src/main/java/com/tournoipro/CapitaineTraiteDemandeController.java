@@ -101,7 +101,7 @@ public class CapitaineTraiteDemandeController implements Initializable {
     }
 
     @FXML
-    public void doAccept(Event event) {
+    public void doAccept(Event event) throws SQLException {
         TableView.TableViewSelectionModel<Joueur> selectedModel = joueurTV.getSelectionModel();
         if (selectedModel.isEmpty()) {
             UserMessages.getInstance().Error("Erreur", "Pas de selection", "Vous devez selectionner un joueur");
@@ -110,7 +110,8 @@ public class CapitaineTraiteDemandeController implements Initializable {
             {
                 Joueur joueur = selectedModel.getSelectedItem();
                 //demandeJoueurEquipeService.affecterJoueurEquipe(Session.getJoueurConnected().getEquipe().getID_Equipe(), joueur.getID_Joueur(),joueur.getPosition());
-                demandeJoueurEquipeService.affecterJoueurEquipe(3, joueur.getID_Joueur(),joueur.getPosition());
+                int id = equipeService.getEquipeByJoueur(joueur.getID_Joueur());
+                demandeJoueurEquipeService.affecterJoueurEquipe(equipeService.getEquipeByJoueur(Session.getInstance().getJoueurConnected()), joueur.getID_Joueur(),joueur.getPosition());
                 JoueurList.remove(joueur);
                 joueurTV.setItems(JoueurList);
             }
@@ -119,7 +120,7 @@ public class CapitaineTraiteDemandeController implements Initializable {
 
 
     @FXML
-    public void doRefuse(Event event) {
+    public void doRefuse(Event event) throws SQLException {
         TableView.TableViewSelectionModel<Joueur> selectedModel = joueurTV.getSelectionModel();
         if (selectedModel.isEmpty()) {
             UserMessages.getInstance().Error("Erreur", "Pas de selection", "Vous devez selectionner un joueur");
@@ -128,7 +129,8 @@ public class CapitaineTraiteDemandeController implements Initializable {
             {
                     Joueur joueur = selectedModel.getSelectedItem();
                     //demandeJoueurEquipeService.refuserDemande(Session.getJoueurConnected().getEquipe().getID_Equipe(), joueur.getID_Joueur());
-                    demandeJoueurEquipeService.refuserDemande(3, joueur.getID_Joueur());
+                int id = equipeService.getEquipeByJoueur(Session.getInstance().getJoueurConnected());
+                demandeJoueurEquipeService.refuserDemande(equipeService.getEquipeByJoueur(Session.getInstance().getJoueurConnected()), joueur.getID_Joueur());
                     JoueurList.remove(joueur);
                     joueurTV.setItems(JoueurList);
             }

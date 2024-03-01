@@ -5,6 +5,7 @@ import com.Entity.Stade;
 import com.Entity.Tournoi;
 import com.Service.StadeService;
 import com.Service.TournoiService;
+import com.Utils.SwitchScenes;
 import javafx.beans.Observable;
 import com.Service.EquipeService;
 import javafx.beans.value.ChangeListener;
@@ -199,6 +200,15 @@ public class ListeTournoiController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
             // Gérer les erreurs d'entrée/sortie si le chargement de l'interface échoue
+        }
+    }
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin", new HomeAdminController(), "HomeStyle");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

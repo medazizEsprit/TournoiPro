@@ -23,5 +23,6 @@
          </font>
       </Text>
       <Button fx:id="btnSupp" layoutX="430.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="26.0" prefWidth="104.0" text="Supprimer" textFill="#e41616" />
+      <Button layoutX="354.0" layoutY="360.0" mnemonicParsing="false" onAction="#Retour" text="Retour" />
    </children>
 </AnchorPane>

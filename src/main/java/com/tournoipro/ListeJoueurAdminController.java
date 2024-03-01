@@ -3,6 +3,7 @@ package com.tournoipro;
 import com.Entity.Equipe;
 import com.Entity.Joueur;
 import com.Service.JoueurService;
+import com.Utils.SwitchScenes;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
@@ -16,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -87,6 +89,16 @@ public class ListeJoueurAdminController implements Initializable {
         equipe.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEquipe().getNom_Equipe()));
         editData();
     }
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin", new HomeAdminController(), "HomeStyle");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void editData (){
         changerField(buts);
         buts.setOnEditCommit(event ->{

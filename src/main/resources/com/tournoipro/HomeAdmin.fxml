@@ -17,7 +17,7 @@
       <Button layoutX="95.0" layoutY="181.0" mnemonicParsing="false" onAction="#GoParties" prefHeight="41.0" prefWidth="137.0" text="Gérer les parties" />
       <Button layoutX="369.0" layoutY="181.0" mnemonicParsing="false" onAction="#GoJoueurs" prefHeight="41.0" prefWidth="137.0" text="Gérer les joueurs" />
       <Button layoutX="95.0" layoutY="250.0" mnemonicParsing="false" onAction="#GoTournois" prefHeight="41.0" prefWidth="137.0" text="Gérer les tournois" />
-      <Button layoutX="369.0" layoutY="250.0" mnemonicParsing="false" onAction="#GoTraiterEquipes" prefHeight="41.0" prefWidth="137.0" text="Traiter équipes" />
-      <Button layoutX="232.0" layoutY="323.0" mnemonicParsing="false" onAction="#GoTraiterTournois" prefHeight="41.0" prefWidth="137.0" text="Traiter tournois" />
+      <Button layoutX="369.0" layoutY="250.0" mnemonicParsing="false" onAction="#GoTraiterEquipes" prefHeight="41.0" prefWidth="137.0" text="Traiter les demandes" />
+      <Button layoutX="232.0" layoutY="317.0" mnemonicParsing="false" onAction="#Deconnect" prefHeight="41.0" prefWidth="137.0" text="Déconnexion" />
    </children>
 </AnchorPane>

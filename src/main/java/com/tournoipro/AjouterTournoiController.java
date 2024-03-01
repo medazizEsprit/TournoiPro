@@ -5,6 +5,7 @@ import com.Entity.Tournoi;
 import com.Entity.Utilisateur;
 import com.Service.StadeService;
 import com.Service.TournoiService;
+import com.Utils.SwitchScenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,6 +13,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Date;
@@ -54,6 +56,7 @@ public class AjouterTournoiController {
         TournoiService tournoiService = new TournoiService();
         try {
             tournoiService.ajout(tournoi);
+            SwitchScenes.getInstance().Switch("ListTournoi");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -61,6 +64,10 @@ public class AjouterTournoiController {
 
     @FXML
     void CancelT(ActionEvent event) {
-
+        try {
+            SwitchScenes.getInstance().Switch("ListTournoi");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

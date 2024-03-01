@@ -49,6 +49,14 @@ public class HomeJoueurController implements Initializable {
         }
     }
 
+    @FXML
+    void Deconnect(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("connexion");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void checkEquipe(ActionEvent event) {
             try {

@@ -3,6 +3,7 @@ package com.tournoipro;
 import com.Entity.Equipe;
 import com.Entity.Stade;
 import com.Service.StadeService;
+import com.Utils.SwitchScenes;
 import javafx.beans.Observable;
 import com.Service.EquipeService;
 import javafx.beans.value.ChangeListener;
@@ -90,6 +91,24 @@ public class ListEquipeController implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+    }
+
+    @FXML
+    void Ajouter(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("ajoutEquipe");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin", new HomeAdminController(), "HomeStyle");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

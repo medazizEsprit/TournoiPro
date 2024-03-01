@@ -5,8 +5,11 @@ import com.Service.DemandeService;
 import com.Service.ParticipationService;
 import com.Service.StadeService;
 import com.Service.TournoiService;
+import com.Utils.SwitchScenes;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -139,6 +142,16 @@ public class Demandecontroller implements Initializable {
         });
         
     }
+
+    @FXML
+    void Retour(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin", new HomeAdminController(), "HomeStyle");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void sendEmail(String destinataire) {
         // Propriétés du serveur de messagerie
         Properties properties = new Properties();

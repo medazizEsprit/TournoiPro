@@ -20,6 +20,15 @@ public class HomeAdminController {
     }
 
     @FXML
+    void Deconnect(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("connexion");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
     void GoJoueurs(ActionEvent event) {
         try {
             SwitchScenes.getInstance().Switch("ListJoueurAdmin");
