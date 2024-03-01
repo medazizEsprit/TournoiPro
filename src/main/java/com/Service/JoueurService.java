@@ -97,6 +97,7 @@ public class JoueurService implements IService<Joueur> {
             resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
             while (resultSet.next()){
                 joueur = getJoueur();
+
             }
         }
         catch (SQLException exception){
@@ -104,7 +105,6 @@ public class JoueurService implements IService<Joueur> {
         };
         return joueur;
     }
-
     public List<Joueur> getListJoueur() throws SQLException {
         List<Joueur> JoueurList = new ArrayList<>();
         Joueur joueur;
@@ -204,4 +204,20 @@ public class JoueurService implements IService<Joueur> {
         };
         return i==1;
     }
+    public Joueur recuperer2(int idequipe) throws SQLException {
+        Joueur joueur = null;
+        try{
+            request = "SELECT * FROM utilisateur,joueur WHERE ID_Joueur = ID_Utilisateur AND ID_Equipe ='"+idequipe+"' AND Capitaine= 1;";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+            while (resultSet.next()){
+                joueur = getJoueurWithoutTeam();
+
+            }
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+        };
+        return joueur;
+    }
+
 }

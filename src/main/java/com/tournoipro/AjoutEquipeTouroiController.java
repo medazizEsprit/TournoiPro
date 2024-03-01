@@ -27,7 +27,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
     @javafx.fxml.FXML
     private Button Rejoindre;
     UtilisateurService utilisateurService= new UtilisateurService();
-    DemandeService demandeService= new DemandeService();
+    ParticipationService participationService= new ParticipationService();
     TournoiService tournoiService= new TournoiService();
     @javafx.fxml.FXML
     private TableView<Tournoi> ListTournoi;
@@ -63,7 +63,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
         }
 
         for (Tournoi tournoi :tournoiList2) {
-            if (demandeService.exsit(tournoi.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false){
+            if ((participationService.exsit(tournoi.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false) &&(demandeService1.exsit(tournoi.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false)){
                 tournoiList.add(tournoi);
             }
         }
@@ -89,6 +89,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
 
 
                     demande.setTournoi(tournoi);
+                    DemandeService demandeService= new DemandeService();
                     try {
                         demandeService.ajout(demande);
                     } catch (SQLException e) {
@@ -112,7 +113,7 @@ public class AjoutEquipeTouroiController  implements Initializable {
 
                     List<Tournoi> tournoiList4 = new ArrayList<Tournoi>();
                     for (Tournoi tournoi1 :tournoiList3) {
-                        if (demandeService.exsit(tournoi1.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false){
+                        if ((participationService.exsit(tournoi1.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false) &&(demandeService.exsit(tournoi1.getID_Tournoi(),joueur.getEquipe().getID_Equipe())==false)){
                             tournoiList4.add(tournoi1);
                         }
                     }

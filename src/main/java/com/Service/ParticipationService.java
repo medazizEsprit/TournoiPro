@@ -99,4 +99,23 @@ public class ParticipationService{
             System.out.println(exception);
         };
     }
+
+    public boolean exsit(int id_tournoi, int id_equipe) {
+        int i=0;
+        try{
+            request = "SELECT * FROM `participation` WHERE `ID_Tournoi`='"+id_tournoi+"' AND `ID_Equipe`='"+id_equipe+"';";
+            resultSet = Datasource.getInstance().getCon().createStatement().executeQuery(request);
+
+            while (resultSet.next()) {
+                i++;
+            }
+
+        }
+        catch (SQLException exception){
+            System.out.println(exception);
+
+
+        };
+        return i==1;
+    }
 }

@@ -2,12 +2,15 @@ package com.tournoipro;
 
 import com.Entity.Stade;
 import com.Service.StadeService;
+import com.Utils.SwitchScenes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+
+import java.io.IOException;
 
 public class AjouterStade {
     @FXML
@@ -32,6 +35,15 @@ public class AjouterStade {
     private Label nbPartError;
 
     @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("Liststade1");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
     void BtnAjouter(ActionEvent event) {
         if(NomST.getText().length() == 0){
             nomSTError.setText("Nom du stade est obligatoire");
@@ -51,6 +63,7 @@ public class AjouterStade {
                         StadeService stadeService = new StadeService();
                         try {
                             stadeService.ajout(stade);
+                            SwitchScenes.getInstance().Switch("Liststade1");
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }

@@ -8,6 +8,7 @@ import javafx.beans.property.Property;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,8 +19,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import javafx.util.StringConverter;
 import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
@@ -35,8 +38,6 @@ public class Liststade1Controller implements Initializable {
     @FXML
     private Button Ajouter;
     @FXML
-    private Button Modifier;
-    @FXML
     private TableView<Stade> TableStade;
     @FXML
     private Button Supprimer;
@@ -50,8 +51,11 @@ public class Liststade1Controller implements Initializable {
     private TableColumn<Stade,String> lieu;
     @FXML
     private TableColumn <Stade, Integer> Id;
+    @FXML
+    private Button Retour;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+          StadeService stadeService = new StadeService();
         try {
             liststade = stadeService.getListStade();
         } catch (SQLException e) {
@@ -68,6 +72,52 @@ public class Liststade1Controller implements Initializable {
 
         );
         TableStade.setItems(stadeObservableList);
+        nom.setCellFactory(TextFieldTableCell.forTableColumn());
+        nom.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setNomStade(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        lieu.setCellFactory(TextFieldTableCell.forTableColumn());
+        lieu.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setLieu(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        numspec.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<Integer>(){
+            @Override
+            public String toString(Integer object) {
+                return object == null ? "" : object.toString();
+            }
+
+
+            @Override
+            public Integer fromString(String string) {
+                return string.isEmpty() ? null : Integer.parseInt(string);
+            }
+        }));
+        numspec.setOnEditCommit(event ->{
+            Stade stade = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            stade.setNumSpectateurs(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                stadeService.modifier(stade);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        Supprimer.setOnAction((event) -> {
+
 
 
                 Stade stade = TableStade.getSelectionModel().getSelectedItem();
@@ -91,18 +141,26 @@ public class Liststade1Controller implements Initializable {
 
 
 
-        Modifier.setOnAction((event)->
-                {
-                    Stade stade1 = TableStade.getSelectionModel().getSelectedItem();
+            } );
 
-                    try {
-                        SwitchScenes.getInstance().SwitchToUpdateStade("ModifierStade",(Stage) (((Node) event.getSource()).getScene().getWindow()), stade.getID_Stade());
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
+    }
 
-                );
+    @FXML
+    void Cancel(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("HomeAdmin", new HomeAdminController(), "HomeStyle");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void GoAjout(ActionEvent event) {
+        try {
+            SwitchScenes.getInstance().Switch("AjouterStade");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
