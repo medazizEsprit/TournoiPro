@@ -111,7 +111,51 @@ public class ListeTournoiController implements Initializable {
             }
         });
 
+        Date_Debut.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<Date>() {
+            @Override
+            public String toString(Date object) {
+                return object == null ? "" : object.toString();
+            }
 
+            @Override
+            public Date fromString(String string) {
+                return string.isEmpty() ? null : Date.valueOf(string);
+            }
+        }));
+
+        Date_Debut.setOnEditCommit(event -> {
+            Tournoi tournoi = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            tournoi.setDate_Debut(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                tournoiService.modifier(tournoi);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        Date_Fin.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<Date>() {
+            @Override
+            public String toString(Date object) {
+                return object == null ? "" : object.toString();
+            }
+
+            @Override
+            public Date fromString(String string) {
+                return string.isEmpty() ? null : Date.valueOf(string);
+            }
+        }));
+
+        Date_Fin.setOnEditCommit(event -> {
+            Tournoi tournoi = event.getTableView().getItems().get(event.getTablePosition().getRow());
+            tournoi.setDate_Fin(event.getNewValue());
+            System.out.println("EDIT DONE");
+            try {
+                tournoiService.modifier(tournoi);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
 
     }
