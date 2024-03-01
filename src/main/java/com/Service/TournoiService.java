@@ -43,8 +43,7 @@ public class TournoiService implements IService<Tournoi>{
     public void modifier(Tournoi tournoi) throws SQLException {
         try {
             request = "UPDATE `tournoi` SET `Nom_Tournoi`='" + tournoi.getNom_Tournoi() + "',`Date_Debut`='" + tournoi.getDate_Debut() +
-                    "',`Date_Fin`='" + tournoi.getDate_Fin() + "',`Nbr_Equipe`='" + tournoi.getNbr_Equipe() + "',`ID_Createur`='" +
-                    tournoi.getCreateur() + "' WHERE `ID_Tournoi`='" + tournoi.getID_Tournoi() + "'";
+                    "',`Date_Fin`='" + tournoi.getDate_Fin() + "',`Nbr_Equipe`='" + tournoi.getNbr_Equipe()  + "' WHERE `ID_Tournoi`='" + tournoi.getID_Tournoi() + "'";
             Datasource.getInstance().getCon().createStatement().executeUpdate(request);
         } catch (SQLException exception) {
             System.out.println(exception);

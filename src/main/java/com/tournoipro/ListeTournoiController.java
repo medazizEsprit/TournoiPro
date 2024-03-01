@@ -110,6 +110,10 @@ public class ListeTournoiController implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+
+
+
+
     }
 
     @FXML
