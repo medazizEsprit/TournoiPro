@@ -5,10 +5,7 @@ package com.Service;
 import com.Entity.*;
 import com.Utils.Datasource;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +15,26 @@ public class TournoiService implements IService<Tournoi>{
     String request;
     ResultSet resultSet;
 
-    @Override
+   @Override
     public int ajout(Tournoi tournoi) throws SQLException {
         int generatedID = 0;
-        try {
-            request = "INSERT INTO `tournoi`( `Nom_Tournoi`, `Date_Debut`, `Date_Fin`, `Nbr_Equipe`, `ID_Createur`) " +
-                    "VALUES ('" + tournoi.getNom_Tournoi() + "','" + tournoi.getDate_Debut().getYear() + "-" + tournoi.getDate_Debut().getMonth() + "-" + tournoi.getDate_Debut().getDay() + "','" +
-                    tournoi.getDate_Fin().getYear() + "-" + tournoi.getDate_Fin().getMonth() + "-" + tournoi.getDate_Fin().getDay() + "'," + tournoi.getNbr_Equipe() + "," + tournoi.getCreateur().getID_Utilisateur() + ")";
-            generatedID = Datasource.getInstance().getCon().createStatement().executeUpdate(request, Statement.RETURN_GENERATED_KEYS);
+        try (Connection con = Datasource.getInstance().getCon()) {
+            String request = "INSERT INTO tournoi(Nom_Tournoi, Date_Debut, Date_Fin, Nbr_Equipe, ID_Createur) VALUES (?, ?, ?, ?, ?)";
+            try (PreparedStatement pstmt = con.prepareStatement(request, Statement.RETURN_GENERATED_KEYS)) {
+                pstmt.setString(1, tournoi.getNom_Tournoi());
+                pstmt.setDate(2, new java.sql.Date(tournoi.getDate_Debut().getTime()));
+                pstmt.setDate(3, new java.sql.Date(tournoi.getDate_Fin().getTime()));
+                pstmt.setInt(4, tournoi.getNbr_Equipe());
+                ((PreparedStatement) pstmt).setInt(5, tournoi.getCreateur().getID_Utilisateur());
+
+                int rowsAffected = pstmt.executeUpdate();
+                if (rowsAffected == 1) {
+                    ResultSet rs = pstmt.getGeneratedKeys();
+                    if (rs.next()) {
+                        generatedID = rs.getInt(1);
+                    }
+                }
+            }
         } catch (SQLException exception) {
             System.out.println(exception);
         }
